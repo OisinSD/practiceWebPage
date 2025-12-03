@@ -1,4 +1,4 @@
-###**Basic HTML, JavaScript, and CSS webpage. **
+Basic HTML, JavaScript, and CSS webpage.
 
 **Task 1 – Prepare, Design, and Plan**
 35 marks
