@@ -1,11 +1,19 @@
-/* Nav Bar */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/************* Nav Bar ****************/
 .NavBar{
     border-bottom: 1px solid black;
 }
 .currentPage{
   color: black;
-  background-image: -o-linear-gradient(white,lightgray);
+  /* background-image: linear-gradient(white,lightgray); */
   border-radius: 20px;
+}
+.itemsInNav{
+  /* background-color: #895129; */
 }
 
 ul {
@@ -14,8 +22,8 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: white;
+  font-size: x-large;
 }
-
 ul li {
   float: right;
 }
@@ -24,12 +32,12 @@ ul li:first-child{
 }
 ul li:nth-child(2){
   float:left;
-  margin-top:12px;
+  margin-top:14px;
 }
 
 ul li a {
   display: block;
-  color: rgb(116, 116, 116);
+  color: rgb(136, 136, 136);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -37,33 +45,196 @@ ul li a {
 
 /* Left here for future Changes... */
 ul li a:hover {
+  color:black;
+  /* background-image: linear-gradient(rgb(132, 213, 245), rgb(43, 180, 235)); */
+  /* border-radius: 10px; */
 }
 
 
-/* Book Cards */
+/*************** Book Cards ******************/
 #bookName {
     display: flex;       
-    flex-wrap: wrap;    
-    gap: 20px;           
-    padding: 20px;       
+    flex-wrap:wrap;    
+    gap: 0px;
+    margin: 0px;           
+    padding: 0px; 
     justify-content: center; 
 }
 
 .card {
     width: 200px; 
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
     transition: 0.3s;
+    padding-top: 15px;
 }
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
 }
 
 .container {
-    width: 100%; 
-    padding: 2px 16px;
+    width: auto; 
+    /* padding: 2px 16px; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0px;
+    margin: 20px;
+}
+
+
+
+/* for book cover image*/
+.book-cover {
+  max-width: 150px;
+  height: auto;
+  border-radius: 6px;
+  /* margin-bottom: 10px; */
+}
+/* .bookInfo{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  margin:5px 0px;
+  gap: 0px;
+} */
+
+.bookInfo h4,
+.bookInfo p {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+    margin: 8px;
+    padding: 0;
+}
+.price{
+  color:rgb(255, 0, 119);
+}
+
+/* .addToCartButton{
+  padding:10px;
+  margin:10px;
+  border: 1px solid black;
+}
+.addToCartButton:hover{
+  background-color: gray;
+} */
+
+
+/************ Search bar on home page *****************/
+.mySearchBar{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 25px;
+
+    font-size:initial;
+}
+
+/************* title on each page ***********/
+
+.title{
+  margin-left:5%;
+}
+
+
+/************** footers on each page ************/
+
+footer{
+  margin-top: 30px;
+  /* padding-top: 200px ; */
+  /* background-image: linear-gradient(rgb(255, 255, 255), #895129); */
+  border-top: 1px solid rgb(155, 155, 155);
+  /* background-image: url(https://cultivatingepiphanies.com/wp-content/uploads/2008/05/banner_oldbooks2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; */
+}
+
+.endOfPage{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left:30%;
+  margin-right:30%;
+
+}
+
+
+@media only screen and (max-width: 768px) {
+    ul li {
+        float: none;       /* remove left/right float */
+        width: 100%;       /* full width */
+        text-align: center;
+    }
+    .mySearchBar {
+        width: 80%;        /* responsive input width */
+        margin: 10px auto;
+        display: block;
+    }
+    .card {
+        width: 90%;           /* almost full width */
+        margin-bottom: 20px;  /* spacing between cards */
+    }
+    #bookName {
+        flex-direction: column; /* stack cards vertically */
+        align-items: center;
+    }
+    .book-cover {
+        max-width: 100%;      /* scale image */
+    }
+    .endOfPage {
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+    }
+    .endOfPage div {
+        margin-bottom: 20px; /* space between footer sections */
+        text-align: center;
+    }
+     ul {
+        font-size: medium;   /* smaller navbar text */
+    }
+    .title {
+        font-size: 1.5em;
+        margin-left: 5%;
+    }
+}
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 768px) {
+    .NavBar ul {
+        display: none;        /* hide links initially */
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+    }
+    
+    .NavBar ul li {
+        float: none;           /* remove float */
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .hamburger {
+        display: block;       /* show hamburger on mobile */
+    }
+
+    /* Optional: make navbar logo and hamburger inline */
+    .NavBar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+    }
 }
