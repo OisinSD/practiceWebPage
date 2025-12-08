@@ -1,6 +1,6 @@
  
  function getData(){
-     fetch("books.json")
+     fetch("../books.json")
      .then(response => response.json())
      .then(data => {
         //   console.log("This is the book Data:" + data.name)
@@ -10,8 +10,9 @@
             console.log("Cannot Load Book Data")
             document.getElementById('bookName').innerHTML = "Cannot Load Books...";
         }
-    }
-)}
+    })
+    .catch(error => console.error("Error loading books: ", error));
+}
 function printFunction(data){
     document.getElementById('bookName').innerHTML += `
     <div class="card">

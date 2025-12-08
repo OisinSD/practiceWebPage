@@ -1,0 +1,242 @@
+[
+  {
+    "name": "The Celestial Weaver",
+    "description": "A sweeping epic fantasy about a young apprentice who must restore the lost threads of the cosmos before reality unravels.",
+    "author": "Elara Vance",
+    "price": 14.99,
+    "release_date": "2023-11-01",
+    "image": "https://placeholder.com/images/celestial_weaver.jpg"
+  },
+  {
+    "name": "Echoes in the Silicon",
+    "description": "A cyberpunk thriller where a detective navigates a neon-drenched future to solve a murder linked to rogue AI.",
+    "author": "Kaelen Reyes",
+    "price": 12.50,
+    "release_date": "2024-02-15",
+    "image": "https://placeholder.com/images/echoes_silicon.jpg"
+  },
+  {
+    "name": "The Last Cartographer",
+    "description": "A historical fiction novel set in the 17th century about a mapmaker on a perilous journey to chart the uncharted corners of the world.",
+    "author": "Seraphina Hale",
+    "price": 18.75,
+    "release_date": "2022-09-20",
+    "image": "https://placeholder.com/images/last_cartographer.jpg"
+  },
+  {
+    "name": "Whispers of the Salt Marsh",
+    "description": "A deeply atmospheric mystery about a family secret hidden beneath the murky waters of a coastal town.",
+    "author": "Rhys Morgan",
+    "price": 9.99,
+    "release_date": "2023-05-10",
+    "image": "https://placeholder.com/images/salt_marsh_whispers.jpg"
+  },
+  {
+    "name": "A Thousand Points of Light",
+    "description": "A collection of interconnected short stories exploring humanity's first successful colonization of Mars.",
+    "author": "Juno Chen",
+    "price": 16.00,
+    "release_date": "2024-01-05",
+    "image": "https://placeholder.com/images/thousand_lights.jpg"
+  },
+  {
+    "name": "The Clockwork Heartbeat",
+    "description": "A steampunk romance set in a fantastical London where automatons and airships define the skies.",
+    "author": "Alistair Finch",
+    "price": 13.50,
+    "release_date": "2023-07-28",
+    "image": "https://placeholder.com/images/clockwork_heartbeat.jpg"
+  },
+  {
+    "name": "Beneath the Obsidian Sun",
+    "description": "A dark fantasy novel where a disgraced knight seeks redemption by confronting an ancient, sun-devouring entity.",
+    "author": "Vespera Stone",
+    "price": 15.95,
+    "release_date": "2022-12-12",
+    "image": "https://placeholder.com/images/obsidian_sun.jpg"
+  },
+  {
+    "name": "The Memory Gardener",
+    "description": "A literary fiction piece about a man who can literally cultivate and prune other people's memories for a living.",
+    "author": "Silas Hawthorne",
+    "price": 11.25,
+    "release_date": "2024-03-01",
+    "image": "https://placeholder.com/images/memory_gardener.jpg"
+  },
+  {
+    "name": "Starfall Protocol",
+    "description": "Military science fiction detailing a desperate interstellar war against an alien collective.",
+    "author": "Zara Khan",
+    "price": 19.50,
+    "release_date": "2023-09-18",
+    "image": "https://placeholder.com/images/starfall_protocol.jpg"
+  },
+  {
+    "name": "The Architect's Labyrinth",
+    "description": "An architectural student discovers a secret society that builds impossible, non-Euclidean structures.",
+    "author": "Orion Cross",
+    "price": 17.00,
+    "release_date": "2023-06-05",
+    "image": "https://placeholder.com/images/architect_labyrinth.jpg"
+  },
+  {
+    "name": "Glimmer of the Deep",
+    "description": "A young adult adventure about deep-sea exploration and the discovery of a sunken, magical civilization.",
+    "author": "Coraline Day",
+    "price": 10.99,
+    "release_date": "2024-04-10",
+    "image": "https://placeholder.com/images/glimmer_deep.jpg"
+  },
+  {
+    "name": "Chronicles of the Ironwood",
+    "description": "The first book in a grim fantasy series following a band of mercenaries through a brutal, cursed forest.",
+    "author": "Magnus Blackwood",
+    "price": 14.25,
+    "release_date": "2022-10-01",
+    "image": "https://placeholder.com/images/ironwood_chronicles.jpg"
+  },
+  {
+    "name": "The Quantum Leap Year",
+    "description": "A time-travel comedy of errors when a scientist accidentally shifts himself one day back every 24 hours.",
+    "author": "Penny Brooks",
+    "price": 11.99,
+    "release_date": "2023-03-22",
+    "image": "https://placeholder.com/images/quantum_leap_year.jpg"
+  },
+  {
+    "name": "The Emperor's Shadow",
+    "description": "A political thriller set in a high-fantasy empire, where an assassin is tasked with protecting the very person they were meant to kill.",
+    "author": "Lysander Thorne",
+    "price": 15.50,
+    "release_date": "2024-05-07",
+    "image": "https://placeholder.com/images/emperors_shadow.jpg"
+  },
+  {
+    "name": "Road Trip to Nowhere",
+    "description": "A contemporary novel about two estranged siblings who embark on a cross-country drive to scatter their father's ashes.",
+    "author": "Willow Grant",
+    "price": 12.00,
+    "release_date": "2023-08-01",
+    "image": "https://placeholder.com/images/road_trip_nowhere.jpg"
+  },
+  {
+    "name": "The Alchemy of Snow",
+    "description": "Magical realism exploring a remote village where the snowfall can turn wishes into reality, for a price.",
+    "author": "Priya Sharma",
+    "price": 13.75,
+    "release_date": "2024-01-20",
+    "image": "https://placeholder.com/images/alchemy_snow.jpg"
+  },
+  {
+    "name": "Digital Ghost",
+    "description": "A technological horror story where a viral code begins to manifest itself as a malicious entity across the internet.",
+    "author": "Elias Vane",
+    "price": 14.50,
+    "release_date": "2023-10-15",
+    "image": "https://placeholder.com/images/digital_ghost.jpg"
+  },
+  {
+    "name": "Beneath the Painted Sky",
+    "description": "A vibrant tale set on a planet where the atmosphere is artificially colored and two rival artists discover the planet's dark secret.",
+    "author": "Kai Mercer",
+    "price": 16.50,
+    "release_date": "2022-11-05",
+    "image": "https://placeholder.com/images/painted_sky.jpg"
+  },
+  {
+    "name": "The Seer of Venice",
+    "description": "A historical thriller in Renaissance Venice, where a clairvoyant woman is pursued by the Inquisition.",
+    "author": "Elena Rossi",
+    "price": 18.00,
+    "release_date": "2023-04-25",
+    "image": "https://placeholder.com/images/seer_venice.jpg"
+  },
+  {
+    "name": "Heirs of the Void",
+    "description": "Space opera following the last remnants of a destroyed empire as they seek a mythical new homeworld.",
+    "author": "Jaxon Steele",
+    "price": 20.00,
+    "release_date": "2024-06-01",
+    "image": "https://placeholder.com/images/heirs_void.jpg"
+  },
+  {
+    "name": "The Unseen Museum",
+    "description": "A children's fantasy novel about a secret museum that only appears when a child is truly lost.",
+    "author": "Fiona Green",
+    "price": 9.50,
+    "release_date": "2023-02-08",
+    "image": "https://placeholder.com/images/unseen_museum.jpg"
+  },
+  {
+    "name": "Song of the Dryad",
+    "description": "An environmental fantasy where a forest spirit learns to communicate with the last human protecting the ancient woods.",
+    "author": "Leif Alder",
+    "price": 13.99,
+    "release_date": "2024-07-12",
+    "image": "https://placeholder.com/images/song_dryad.jpg"
+  },
+  {
+    "name": "The Zero-Sum Game",
+    "description": "A fast-paced psychological thriller about a brilliant stockbroker caught in a deadly financial conspiracy.",
+    "author": "Marcus Cole",
+    "price": 11.50,
+    "release_date": "2023-11-29",
+    "image": "https://placeholder.com/images/zero_sum_game.jpg"
+  },
+  {
+    "name": "Lanterns of the Far East",
+    "description": "A multigenerational saga set in 19th-century China, focusing on a family of silk merchants.",
+    "author": "Mei Lin",
+    "price": 17.50,
+    "release_date": "2022-08-14",
+    "image": "https://placeholder.com/images/lanterns_east.jpg"
+  },
+  {
+    "name": "The Glitch in the Matrix",
+    "description": "A philosophical sci-fi book exploring the nature of reality when a physics professor finds a flaw in the universe's code.",
+    "author": "Dr. Alex Finch",
+    "price": 15.00,
+    "release_date": "2023-05-02",
+    "image": "https://placeholder.com/images/glitch_matrix.jpg"
+  },
+  {
+    "name": "Moonlight Sonata of the Lost",
+    "description": "A gothic horror novel set in an old European boarding school haunted by a tragic musical legend.",
+    "author": "Ophelia Thorne",
+    "price": 10.75,
+    "release_date": "2024-03-17",
+    "image": "https://placeholder.com/images/moonlight_sonata.jpg"
+  },
+  {
+    "name": "The Dragon's Dividend",
+    "description": "An urban fantasy where magic and high finance collide in modern-day New York City.",
+    "author": "Sasha Reed",
+    "price": 14.00,
+    "release_date": "2023-01-11",
+    "image": "https://placeholder.com/images/dragons_dividend.jpg"
+  },
+  {
+    "name": "The Island of No Returns",
+    "description": "An adventure story about a group of scientists shipwrecked on a mysterious island that defies all laws of physics.",
+    "author": "Leo Harding",
+    "price": 16.99,
+    "release_date": "2024-02-28",
+    "image": "https://placeholder.com/images/island_returns.jpg"
+  },
+  {
+    "name": "The Poet's Secret Garden",
+    "description": "A cozy fantasy novel about a librarian who discovers a magical garden that grows stories instead of flowers.",
+    "author": "Clara Bell",
+    "price": 12.99,
+    "release_date": "2023-07-07",
+    "image": "https://placeholder.com/images/poets_garden.jpg"
+  },
+  {
+    "name": "In the Court of the Winter King",
+    "description": "A dark fairy tale retelling where a young queen must outwit the cruel, immortal Winter King to save her land.",
+    "author": "Evelyn Frost",
+    "price": 15.25,
+    "release_date": "2022-12-01",
+    "image": "https://placeholder.com/images/winter_king.jpg"
+  }
+]
