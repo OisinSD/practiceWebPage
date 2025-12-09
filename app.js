@@ -1,6 +1,9 @@
 //  function getData(){
 let bookData = [];     
 
+
+/************** Fetching books from json file ***************/
+
 fetch("../booktest.json")
      .then(response => response.json())
      .then(data => {
@@ -14,34 +17,26 @@ fetch("../booktest.json")
         }
     })
     .catch(error => console.error("Error loading books: ", error));
-// }
 
-// let books 
 
-// function bringToPage(data){
-    
-// }
+
+
+/********** Filtering using the search bar method ************/
 
 function searchForBooks(){
     let input = document.getElementById('searching').value;
-
-    // If input is empty, clear results
     if (input === "") {
         printFunction(bookData);
         return;
     }
-    // Create regex
     let regex = new RegExp(input, "i");
-
-    // Filter countries that match the regex
     let results = bookData.filter(book => regex.test(book.name));
-
-    // Display results
     printFunction(results);
-    // document.getElementById('title').innerHTML =
-    //     results.length ? results.join("<br>") : "No results found";
-
+   
 }
+
+
+/**** Printing the books method *****/
 
 function printFunction(data){
    let bookContainer = document.getElementById('bookName');
@@ -64,7 +59,7 @@ function printFunction(data){
 }
 
 
-
+/******* when user Clicks a book  *******/
 
 
 
