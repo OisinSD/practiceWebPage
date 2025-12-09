@@ -9,23 +9,23 @@
 </head>
 <body>  
     <div class = "NavBar">
-    <div class="topnav" id="myTopnav">
         <ul>
             <li><a class = "currentPage" href="../pages/index.html">Project Two</a></li>
             <li><input type="search" class="mySearchBar" placeholder="Search..." id="searching" oninput="searchForBooks()" autocomplete="off"></li>
             <!-- <li><span class="hamburger" onclick="toggleMenu()">&#9776;</span></li> -->
-            <li>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </li>
+            
+            
             <li><a href="../pages/cart.html">Cart</a></li>
             <li><a href="../pages/newsletter.html">News Letter</a></li>
             <li><a href="../pages/christmas.html">Christmas</a></li>
         </ul>
     </div>
+    <div class="topnav" id="myTopnav">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
-    <h1 class="title">Our Books</h1>
+<h1 class="title">Our Books</h1>
     
     <div class="printingDisplay">
         <p id="bookName" onclick="selectingBook()"></p>

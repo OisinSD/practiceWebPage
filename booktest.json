@@ -1,0 +1,82 @@
+[
+  {
+    "name": "To Kill a Mockingbird",
+    "description": "A coming-of-age story that explores racial injustice, moral growth, and empathy in the American South.",
+    "author": "Harper Lee",
+    "price": 14.99,
+    "release_date": "1960-07-11",
+    "image": "https://covers.openlibrary.org/b/id/8226096-L.jpg"
+  },
+  {
+    "name": "1984",
+    "description": "A dystopian novel depicting a totalitarian society under constant surveillance and mind control.",
+    "author": "George Orwell",
+    "price": 12.50,
+    "release_date": "1949-06-08",
+    "image": "https://covers.openlibrary.org/b/id/7222246-L.jpg"
+  },
+  {
+    "name": "The Great Gatsby",
+    "description": "A tragic story of love, wealth, and illusion in the Roaring Twenties.",
+    "author": "F. Scott Fitzgerald",
+    "price": 10.99,
+    "release_date": "1925-04-10",
+    "image": "https://covers.openlibrary.org/b/id/10239036-L.jpg"
+  },
+  {
+    "name": "Pride and Prejudice",
+    "description": "A romantic comedy exploring manners, marriage, and social expectations in 19th-century England.",
+    "author": "Jane Austen",
+    "price": 9.99,
+    "release_date": "1813-01-28",
+    "image": "https://covers.openlibrary.org/b/id/8091016-L.jpg"
+  },
+  {
+    "name": "The Hobbit",
+    "description": "A fantasy adventure following Bilbo Baggins on a quest filled with dwarves, dragons, and danger.",
+    "author": "J.R.R. Tolkien",
+    "price": 15.99,
+    "release_date": "1937-09-21",
+    "image": "https://covers.openlibrary.org/b/id/6979861-L.jpg"
+  },
+  {
+    "name": "The Catcher in the Rye",
+    "description": "A story about teenage alienation and rebellion as narrated by Holden Caulfield.",
+    "author": "J.D. Salinger",
+    "price": 11.50,
+    "release_date": "1951-07-16",
+    "image": "https://covers.openlibrary.org/b/id/8231856-L.jpg"
+  },
+  {
+    "name": "The Fellowship of the Ring",
+    "description": "The first volume of The Lord of the Rings, following Frodo as he begins his journey to destroy the One Ring.",
+    "author": "J.R.R. Tolkien",
+    "price": 17.99,
+    "release_date": "1954-07-29",
+    "image": "https://covers.openlibrary.org/b/id/8135411-L.jpg"
+  },
+  {
+    "name": "The Hunger Games",
+    "description": "A dystopian survival story where Katniss Everdeen is forced into a deadly televised arena.",
+    "author": "Suzanne Collins",
+    "price": 13.99,
+    "release_date": "2008-09-14",
+    "image": "https://covers.openlibrary.org/b/id/8165261-L.jpg"
+  },
+  {
+    "name": "Harry Potter and the Sorcerer's Stone",
+    "description": "The first book in the Harry Potter series, following a young wizard discovering his magical heritage.",
+    "author": "J.K. Rowling",
+    "price": 14.99,
+    "release_date": "1997-06-26",
+    "image": "https://covers.openlibrary.org/b/id/7888781-L.jpg"
+  },
+  {
+    "name": "The Fault in Our Stars",
+    "description": "A romance between two teenagers who meet at a cancer support group.",
+    "author": "John Green",
+    "price": 12.99,
+    "release_date": "2012-01-10",
+    "image": "https://covers.openlibrary.org/b/id/7894896-L.jpg"
+  }
+]

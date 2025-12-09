@@ -44,7 +44,7 @@ function printFunction(data){
 
    data.forEach(data => {
     bookContainer.innerHTML += `
-        <div class="container">
+        <div class="container" onClick="selectingBook('data')">
             <div>
                 <img src="${data.image}" alt="${data.name}" class="book-cover">
             </div>
@@ -52,7 +52,6 @@ function printFunction(data){
                 <h4>${data.name}</h4>
                 <p>${data.author}</p>
                 <p class="price" >$${data.price}</p>
-                <p class="addToCardButton">Add to Cart</p>
             </div>
         </div>`;
     }); 
@@ -61,10 +60,48 @@ function printFunction(data){
 
 /******* when user Clicks a book  *******/
 
+function selectingBook(data){
+
+        console.log("book data", data); 
+
+    localStorage.setItem("selectedBook", JSON.stringify(data));
+
+        console.log("Local storage: ", localStorage.getItem("selectedBook")); //Test if data is being set to local storage
+
+    window.location.href = "../pages/bookPage.html";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+        console.log("eventListen occured content loaded");
+
+    let selectedBook = JSON.parse(localStorage.getItem("selectedBook"));
+
+    if(selectedBook){
+        document.getElementById('bookDisplay').innerHTML = `
+        <div>
+            <img src="${selectedBook.image}" alt="${selectedBook.name}" class="book-cover">
+        </div>
+        <div class="bookInfo" >
+            <h4>${selectedBook.name}</h4>
+            <p>${selectedBook.author}</p>
+            <p class="price" >$${selectedBook.price}</p>
+        </div>`
+    }
+})
 
 
 
 
+
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
 
 
 
