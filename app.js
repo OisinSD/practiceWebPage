@@ -7,16 +7,18 @@ let bookData = [];
 fetch("../booktest.json")
      .then(response => response.json())
      .then(data => {
+        bookData = data;
         //   console.log("This is the book Data:" + data.name)
-        if(data){
-            bookData = data;
-            printFunction(bookData);
+        if(document.getElementById('bookName')){
+            printFunction(data);
         } else{
             console.log("Cannot Load Book Data")
             document.getElementById('bookName').innerHTML = "Cannot Load Books...";
         }
     })
-    .catch(error => console.error("Error loading books: ", error));
+    .catch(error => {
+        console.error("Error loading books: ", error)
+    });
 
 
 
@@ -43,50 +45,74 @@ function printFunction(data){
    bookContainer.innerHTML = '';
 
    data.forEach(data => {
+    // console.log("This is my book data", data);
     bookContainer.innerHTML += `
-        <div class="container" onClick="selectingBook('data')">
+        <div class="container" onclick="selectingBook('${data.id}')">
             <div>
                 <img src="${data.image}" alt="${data.name}" class="book-cover">
             </div>
             <div class="bookInfo" >
-                <h4>${data.name}</h4>
+                <h4 class="bookName">${data.name}</h4>
                 <p>${data.author}</p>
-                <p class="price" >$${data.price}</p>
+                <p class="price" >€${data.price}</p>
             </div>
         </div>`;
+        // console.log("Making each book data a string", JSON.stringify(data));
     }); 
 }
 
 
 /******* when user Clicks a book  *******/
 
-function selectingBook(data){
+function selectingBook(dataID){
+    let book = bookData.find(book => book.id == dataID)
 
-        console.log("book data", data); 
+        // console.log("book data", book); 
+    if(book){
 
-    localStorage.setItem("selectedBook", JSON.stringify(data));
-
-        console.log("Local storage: ", localStorage.getItem("selectedBook")); //Test if data is being set to local storage
-
-    window.location.href = "../pages/bookPage.html";
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-
-        console.log("eventListen occured content loaded");
-
-    let selectedBook = JSON.parse(localStorage.getItem("selectedBook"));
-
-    if(selectedBook){
-        document.getElementById('bookDisplay').innerHTML = `
-        <div>
-            <img src="${selectedBook.image}" alt="${selectedBook.name}" class="book-cover">
-        </div>
-        <div class="bookInfo" >
-            <h4>${selectedBook.name}</h4>
-            <p>${selectedBook.author}</p>
-            <p class="price" >$${selectedBook.price}</p>
-        </div>`
+        localStorage.setItem("selectedBook", JSON.stringify(book));
+        window.location.href = "../pages/bookPage.html";
+    }else{
+        console.log("Unable to setItem");
+    }
+        // console.log("Local storage: ", localStorage.getItem("selectedBook")); //Test if data is being set to local storage
+    }
+        
+    document.addEventListener("DOMContentLoaded", () => {
+    console.log("eventListener occured");
+    //  selectedBookRaw;
+    try{
+        let selectedBookRaw = localStorage.getItem("selectedBook");
+        if(selectedBookRaw){
+            let selectedBook = JSON.parse(selectedBookRaw);
+            document.getElementById('bookDisplay').innerHTML = `
+            <div class="bookContainer">
+                <div>
+                    <img src="${selectedBook.image}" alt="${selectedBook.name}" class="individualbook-cover">
+                </div>
+                <div>
+                    <h1 class="bookTitle" >${selectedBook.name}</h4>
+                    <br>
+                    <p><b>Author:</b> ${selectedBook.author}</p>
+                    <br>
+                    <p class="price">€${selectedBook.price}</p>
+                    <p>${selectedBook.quantity}</p>
+                    <br><br>
+                    <button class="addToCartButton" role="button" onclick="addToCart('${selectedBook}')">Add To Cart</button>
+                
+                </div>
+            </div>
+            <div class="spliter">
+                <hr>
+            </div>
+            <div class="bookDescription">
+                <h1>Description</h1>
+                <p>${selectedBook.description}</p>
+            </div>
+            `
+        }
+    }catch{
+        console.log("Tried to getItems but failed");
     }
 })
 
@@ -95,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function myFunction() {
-  var x = document.getElementById("myTopnav");
+  let x = document.getElementById("myTopnav")
   if (x.className === "topnav") {
     x.className += " responsive";
   } else {
@@ -103,6 +129,19 @@ function myFunction() {
   }
 }
 
+/********* When user adds book to cart: user will be brought to Cart page with that specific books information ***********/
+
+function addToCart(bookIDAddedToCart){
+    // let book = bookData.find(book => book.id == bookIDAddedToCart);
+        try{
+            window.location.href = "../pages/cart.html";
+            document.getElementById('myBookInCart').innerHTML = `<p>HEllo World</p>`;
+            console.log("it worked");
+        }catch{
+            console.log("Unable to Load book info into Cart");
+            document.getElementById('myBookInCart').innerHTMl = "Unable to load book into Cart";
+        }
+    }
 
 
 

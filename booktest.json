@@ -1,82 +1,102 @@
 [
   {
+    "id": 1,
     "name": "To Kill a Mockingbird",
-    "description": "A coming-of-age story that explores racial injustice, moral growth, and empathy in the American South.",
-    "author": "Harper Lee",
+    "description": "To Kill a Mockingbird, written by Harper Lee, is a timeless and deeply moving novel set in the small Southern town of Maycomb, Alabama during the Great Depression. <br><br>The story is narrated by Scout Finch...<br><br>a curious and outspoken young girl who grows up alongside her brother Jem under the guidance of their wise and principled father, Atticus Finch. What begins as a tale of childhood adventures gradually unfolds into a powerful exploration of morality, empathy, and the human capacity for both good and evil. When Atticus, a respected lawyer, agrees to defend Tom Robinson—a Black man wrongly accused of harming a white woman—the Finch family becomes the center of the town’s anger and prejudice. Through Scout’s innocent yet perceptive point of view, the novel exposes the racial injustice deeply rooted in society, as well as the courage required to challenge it. <br><br>As Scout and Jem grapple with the complexities of fairness, compassion, and growing up, they also encounter unforgettable characters like Boo Radley, the reclusive neighbor who becomes a symbol of misunderstood kindness. The intertwining stories of Tom Robinson’s trial and Boo Radley’s quiet presence culminate in lessons about humanity that resonate long after the final page. Rich in emotion, layered themes, and unforgettable characters...<br><br> To Kill a Mockingbird remains one of the most important works of American literature—reminding readers of the value of empathy and the ongoing need to confront injustice wherever it appears.",
+    "author": "George Orwell",
     "price": 14.99,
     "release_date": "1960-07-11",
-    "image": "https://covers.openlibrary.org/b/id/8226096-L.jpg"
+    "image": "https://covers.openlibrary.org/b/id/8226096-L.jpg",
+    "quantity": 23
   },
   {
+    "id": 2,
     "name": "1984",
-    "description": "A dystopian novel depicting a totalitarian society under constant surveillance and mind control.",
+    "description": "George Orwell's *1984* is a dystopian novel set in a totalitarian society ruled by the Party and its omnipresent leader, Big Brother.<br><br>The story follows Winston Smith, a low-ranking member of the Party, who works at the Ministry of Truth, where he alters historical records to fit the Party's propaganda.<br><br>As Winston becomes increasingly disillusioned with the oppressive regime, he secretly rebels against the Party's control over truth, thought, and individual freedom.<br><br>He begins a forbidden love affair and attempts to seek out personal autonomy, only to face the terrifying consequences of dissent in a world where surveillance, manipulation, and fear dominate every aspect of life.<br><br>*1984* explores themes of censorship, totalitarianism, the malleability of history, and the struggle for personal identity, making it a profound warning about the dangers of unchecked political power.",
     "author": "George Orwell",
     "price": 12.50,
     "release_date": "1949-06-08",
-    "image": "https://covers.openlibrary.org/b/id/7222246-L.jpg"
+    "image": "https://covers.openlibrary.org/b/id/7222246-L.jpg",
+    "quantity": 14
   },
   {
+    "id": 3,
     "name": "The Great Gatsby",
-    "description": "A tragic story of love, wealth, and illusion in the Roaring Twenties.",
+    "description": "F. Scott Fitzgerald's *The Great Gatsby* is a classic novel set in the Roaring Twenties, a period of prosperity, jazz, and excess in America.<br><br>The story is narrated by Nick Carraway, a young man from the Midwest who moves to Long Island and becomes fascinated by his enigmatic and wealthy neighbor, Jay Gatsby.<br><br>Gatsby is famous for his lavish parties and mysterious past, all driven by his obsessive love for Daisy Buchanan, a married woman he met years before.<br><br>As Nick observes the lives of the rich and careless, he uncovers the illusions, desires, and moral decay that underlie their glamorous world.<br><br>*The Great Gatsby* explores themes of the American Dream, love, wealth, social status, and the pursuit of happiness, ultimately revealing the emptiness and tragedy that often accompany obsession and materialism.",
     "author": "F. Scott Fitzgerald",
     "price": 10.99,
     "release_date": "1925-04-10",
-    "image": "https://covers.openlibrary.org/b/id/10239036-L.jpg"
+    "image": "https://covers.openlibrary.org/b/id/10239036-L.jpg",
+    "quantity": 54
   },
   {
+    "id": 4,
     "name": "Pride and Prejudice",
-    "description": "A romantic comedy exploring manners, marriage, and social expectations in 19th-century England.",
+    "description": "Jane Austen's *Pride and Prejudice* is a classic novel set in early 19th-century England, exploring themes of love, social class, and personal growth.<br><br>The story follows Elizabeth Bennet, a witty and independent young woman, as she navigates the complexities of society, family expectations, and romantic relationships.<br><br>Elizabeth's sharp mind and strong opinions often clash with the proud and wealthy Mr. Darcy, leading to misunderstandings, personal reflection, and gradual mutual respect.<br><br>Through courtships, social events, and family dynamics, the novel examines the challenges of marrying for love versus social advancement, while critiquing rigid class structures.<br><br>*Pride and Prejudice* remains celebrated for its memorable characters, sparkling dialogue, and timeless exploration of human behavior and societal pressures.",
     "author": "Jane Austen",
     "price": 9.99,
     "release_date": "1813-01-28",
-    "image": "https://covers.openlibrary.org/b/id/8091016-L.jpg"
+    "image": "https://covers.openlibrary.org/b/id/8091016-L.jpg",
+    "quantity": 14
   },
   {
+    "id": 5,
     "name": "The Hobbit",
-    "description": "A fantasy adventure following Bilbo Baggins on a quest filled with dwarves, dragons, and danger.",
+    "description": "J.R.R. Tolkien's *The Hobbit* is a fantasy novel that follows the adventures of Bilbo Baggins, a quiet and unassuming hobbit who is unexpectedly swept into a dangerous quest.<br><br>Bilbo joins a group of thirteen dwarves led by Thorin Oakenshield and the wizard Gandalf as they seek to reclaim the Lonely Mountain and its treasure from the fearsome dragon Smaug.<br><br>Throughout the journey, Bilbo encounters trolls, goblins, giant spiders, and other fantastical creatures, discovering courage, resourcefulness, and a sense of adventure he never knew he had.<br><br>He also comes across Gollum and finds the One Ring, an encounter that foreshadows the events of *The Lord of the Rings*.<br><br>*The Hobbit* explores themes of heroism, personal growth, friendship, and the clash between greed and morality, all set in the richly imagined world of Middle-earth.",
     "author": "J.R.R. Tolkien",
     "price": 15.99,
     "release_date": "1937-09-21",
-    "image": "https://covers.openlibrary.org/b/id/6979861-L.jpg"
+    "image": "https://covers.openlibrary.org/b/id/6979861-L.jpg",
+    "quantity": 2
   },
   {
+    "id": 6,
     "name": "The Catcher in the Rye",
-    "description": "A story about teenage alienation and rebellion as narrated by Holden Caulfield.",
+    "description":  "J.D. Salinger's *The Catcher in the Rye* is a coming-of-age novel that explores teenage alienation and rebellion in post-World War II America.<br><br>The story is narrated by Holden Caulfield, a sixteen-year-old boy who has just been expelled from Pencey Prep, a private boarding school.<br><br>Disillusioned with the adult world and its perceived phoniness, Holden wanders through New York City, struggling with loneliness, grief, and confusion as he searches for meaning and genuine human connection.<br><br>Throughout his journey, he reflects on childhood innocence, societal expectations, and his own fear of growing up.<br><br>*The Catcher in the Rye* captures themes of identity, alienation, adolescence, and the tension between innocence and experience, making it a timeless exploration of the complexities of youth.",
     "author": "J.D. Salinger",
     "price": 11.50,
     "release_date": "1951-07-16",
-    "image": "https://covers.openlibrary.org/b/id/8231856-L.jpg"
+    "image": "https://covers.openlibrary.org/b/id/8231856-L.jpg",
+    "quantity": 20
   },
   {
+    "id": 7,
     "name": "The Fellowship of the Ring",
-    "description": "The first volume of The Lord of the Rings, following Frodo as he begins his journey to destroy the One Ring.",
+    "description": "J.R.R. Tolkien's *The Fellowship of the Ring* is the first book in the epic fantasy trilogy *The Lord of the Rings*, set in the richly imagined world of Middle-earth.<br><br>The story follows Frodo Baggins, a young hobbit who inherits the One Ring, a powerful artifact created by the Dark Lord Sauron to dominate all of Middle-earth.<br><br>Realizing the danger the Ring poses, Frodo sets out on a perilous journey to destroy it in the fires of Mount Doom. He is joined by a diverse group known as the Fellowship: hobbits Sam, Merry, and Pippin; Aragorn, a ranger; Gandalf, a wizard; Legolas, an elf; Gimli, a dwarf; and Boromir, a man of Gondor.<br><br>Together, they face treacherous landscapes, monstrous creatures, and the corrupting influence of the Ring, testing their courage, loyalty, and friendship.<br><br>*The Fellowship of the Ring* explores themes of heroism, friendship, sacrifice, and the struggle between good and evil, while laying the foundation for an epic tale of adventure, power, and destiny.",
     "author": "J.R.R. Tolkien",
     "price": 17.99,
     "release_date": "1954-07-29",
-    "image": "https://covers.openlibrary.org/b/id/8135411-L.jpg"
+    "image": "https://covers.openlibrary.org/b/id/8135411-L.jpg",
+    "quantity": 16
   },
   {
+    "id": 8,
     "name": "The Hunger Games",
-    "description": "A dystopian survival story where Katniss Everdeen is forced into a deadly televised arena.",
+    "description": "Suzanne Collins' *The Hunger Games* is a dystopian novel set in the post-apocalyptic nation of Panem, where the Capitol maintains control over twelve districts through fear, oppression, and an annual televised event known as the Hunger Games.<br><br>The story follows Katniss Everdeen, a courageous and resourceful sixteen-year-old from District 12, who volunteers to take her younger sister's place in the deadly games. Alongside her male counterpart, Peeta Mellark, she must fight for survival against other tributes in a controlled arena filled with deadly traps, harsh conditions, and constant surveillance.<br><br>As Katniss navigates alliances, strategies, and the moral challenges of survival, she becomes a symbol of resistance against the Capitol's tyranny. Her inner struggle between self-preservation, loyalty, and compassion drives much of the story, while the romance and tension with Peeta add emotional depth.<br><br>*The Hunger Games* explores themes of power, inequality, survival, sacrifice, and the impact of media and propaganda, offering a thrilling yet thought-provoking examination of human resilience and the fight for freedom.",
     "author": "Suzanne Collins",
     "price": 13.99,
     "release_date": "2008-09-14",
-    "image": "https://covers.openlibrary.org/b/id/8165261-L.jpg"
+    "image": "https://covers.openlibrary.org/b/id/8165261-L.jpg",
+    "quantity": 30
   },
   {
+    "id": 9,
     "name": "Harry Potter and the Sorcerer's Stone",
-    "description": "The first book in the Harry Potter series, following a young wizard discovering his magical heritage.",
+    "description":  "J.K. Rowling's *Harry Potter and the Sorcerer's Stone* is the first book in the globally beloved Harry Potter series, introducing readers to a magical world hidden within modern England.<br><br>The story follows Harry Potter, an orphaned boy raised by his cruel aunt and uncle, who discovers on his eleventh birthday that he is a wizard. He is invited to attend Hogwarts School of Witchcraft and Wizardry, where he makes lifelong friends, including Ron Weasley and Hermione Granger, and learns about magic, spells, and the history of the wizarding world.<br><br>At Hogwarts, Harry uncovers the mystery of the Sorcerer's Stone, an object with the power to grant immortality. With his friends, he faces challenges, uncovers secrets, and confronts the dark wizard Voldemort, who killed his parents and seeks to regain power.<br><br>*Harry Potter and the Sorcerer's Stone* explores themes of friendship, bravery, identity, and the struggle between good and evil, setting the stage for an epic journey that will shape Harry's life and the fate of the wizarding world.",
     "author": "J.K. Rowling",
     "price": 14.99,
     "release_date": "1997-06-26",
-    "image": "https://covers.openlibrary.org/b/id/7888781-L.jpg"
+    "image": "https://covers.openlibrary.org/b/id/7888781-L.jpg",
+    "quantity": 27
   },
   {
+    "id": 10,
     "name": "The Fault in Our Stars",
-    "description": "A romance between two teenagers who meet at a cancer support group.",
+    "description":  "John Green's *The Fault in Our Stars* is a contemporary young adult novel that tells the poignant and heartfelt story of two teenagers facing the challenges of life and love while dealing with cancer.<br><br>The story follows Hazel Grace Lancaster, a sixteen-year-old girl living with thyroid cancer, who meets Augustus Waters, a charming and witty cancer survivor, at a support group. Despite their illnesses, they form a deep and meaningful connection, sharing humor, hope, and the desire to leave a lasting impact on the world.<br><br>Hazel and Augustus embark on an emotional journey that includes traveling to Amsterdam to meet their favorite author, confronting their fears, and exploring the complexities of life, love, and mortality.<br><br>*The Fault in Our Stars* explores themes of love, loss, resilience, and the search for meaning, offering a touching and realistic portrayal of young people facing extraordinary challenges with courage, honesty, and compassion.",
     "author": "John Green",
     "price": 12.99,
     "release_date": "2012-01-10",
-    "image": "https://covers.openlibrary.org/b/id/7894896-L.jpg"
+    "image": "https://covers.openlibrary.org/b/id/7894896-L.jpg",
+    "quantity": 39
   }
 ]

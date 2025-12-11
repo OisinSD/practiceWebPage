@@ -7,58 +7,30 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
+
+
 <body>  
-    <div class = "NavBar">
-        <ul>
-            <li><a class = "currentPage" href="../pages/index.html">Project Two</a></li>
-            <li><input type="search" class="mySearchBar" placeholder="Search..." id="searching" oninput="searchForBooks()" autocomplete="off"></li>
-            <!-- <li><span class="hamburger" onclick="toggleMenu()">&#9776;</span></li> -->
-            
-            
-            <li><a href="../pages/cart.html">Cart</a></li>
-            <li><a href="../pages/newsletter.html">News Letter</a></li>
-            <li><a href="../pages/christmas.html">Christmas</a></li>
-        </ul>
-    </div>
-    <div class="topnav" id="myTopnav">
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </div>
-<h1 class="title">Our Books</h1>
+ <div class="topnav" id="myTopnav">
+    <a href="../pages/index.html" class="active">Project Two</a>
+    
+    <input type="search" class="mySearchBar" placeholder="Search..." 
+           id="searching" oninput="searchForBooks()" autocomplete="off">
+
+    <a href="../pages/cart.html" class="menuItem">Cart</a>
+    <a href="../pages/newsletter.html" class="menuItem">News Letter</a>
+    <a href="../pages/christmas.html" class="menuItem">Christmas</a>
+
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+    <h1 class="title">Our Popular Books</h1>
     
     <div class="printingDisplay">
-        <p id="bookName" onclick="selectingBook()"></p>
+        <p id="bookName"></p>
     </div>
-
-
-
-
-
-    <!-- <footer>
-        <div class="endOfPage">
-            <div>
-                <h4>SERVICES</h4>
-                <p>Click and Collect</p>
-                <p>Shopping & Delivery</p>
-                <p>Returns & Refunds</p> 
-                
-            </div>
-            <div>
-                <h4>HELP CENTRE</h4>
-                <p>Contact Us</p>
-                <p>FAQs</p>
-                <p>Store Locator</p>
-                
-            </div>
-            <div>
-                <h4>ABOUT US</h4>
-                <p>Our Values</p>
-                <p>Work With Us</p>
-                <p>Our History</p>
-            </div>
-        </div>
-    </footer> -->
 
 </body>
 <script src ="../app.js"></script>
