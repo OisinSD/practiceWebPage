@@ -1,12 +1,15 @@
-//  function getData(){
+/********* Global variable to store books into when fetched so i can use it in other functions  **************/
 let bookData = [];     
 
 
-/************** Fetching books from json file ***************/
 
-fetch("../booktest.json")
-     .then(response => response.json())
-     .then(data => {
+
+/************** Fetching books from json file ***************/
+function loadBooks(){
+
+    fetch("../booktest.json")
+    .then(response => response.json())
+    .then(data => {
         bookData = data;
         //   console.log("This is the book Data:" + data.name)
         if(document.getElementById('bookName')){
@@ -19,6 +22,8 @@ fetch("../booktest.json")
     .catch(error => {
         console.error("Error loading books: ", error)
     });
+}
+
 
 
 
@@ -36,6 +41,9 @@ function searchForBooks(){
     printFunction(results);
    
 }
+
+
+
 
 
 /**** Printing the books method *****/
@@ -62,6 +70,9 @@ function printFunction(data){
 }
 
 
+
+
+
 /******* when user Clicks a book  *******/
 
 function selectingBook(dataID){
@@ -78,6 +89,13 @@ function selectingBook(dataID){
         // console.log("Local storage: ", localStorage.getItem("selectedBook")); //Test if data is being set to local storage
     }
         
+
+
+
+
+
+/************** Listening for when the individual book data is loaded before showing information *************/
+
     document.addEventListener("DOMContentLoaded", () => {
     console.log("eventListener occured");
     //  selectedBookRaw;
@@ -110,6 +128,11 @@ function selectingBook(dataID){
                 <p>${selectedBook.description}</p>
             </div>
             `
+            try{
+                console.log("LocalStorage is cleared", localStorage.clear());
+            }catch{
+                console.log("Failed to clear localStorage");
+            }
         }
     }catch{
         console.log("Tried to getItems but failed");
@@ -120,6 +143,8 @@ function selectingBook(dataID){
 
 
 
+/****** When handburger menu is clicked, CSS is changed *******/
+
 function myFunction() {
   let x = document.getElementById("myTopnav")
   if (x.className === "topnav") {
@@ -128,6 +153,11 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+
+
+
+
+
 
 /********* When user adds book to cart: user will be brought to Cart page with that specific books information ***********/
 
@@ -147,43 +177,46 @@ function addToCart(bookIDAddedToCart){
 
 
 
+/*********** fetching new information from json when user opens page ***********/
+
+
+function navBar(){
+    fetch("../components/navBar.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navBar').innerHTML = data;
+    })
+    highlightActiveNav();
+}
+
+function highlightActiveNav() {
+    const links = document.querySelectorAll('#myTopnav a'); // all <a> in navbar
+    console.log("my nav links: ", links);
+    const currentPath = window.location.pathname;
+
+    links.forEach(link => {
+        // Remove any previous 'active'
+        link.classList.remove('active');
+
+        // Only add active if href matches current page
+        const linkPath = new URL(link.href).pathname;
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+        }
+    });
+}
+
+function loadNewsPage(){
+    console.log("Detection: News page has loaded");
+    let newData = [];
+    fetch("../news.json")
+    .then(response => response.json())
+    .then(data => {
+        data.map(item => {
+            document.getElementById('newsTopic').innerHTML += item.general_topic;
+        })
+    })
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// document.getElementById("weatherForm").addEventListener("submit", function (e) { 
-//     e.preventDefault(); // Prevent form reload
-
-//     let cityInput = document.getElementById("cityInput").value.trim(); // Get user input
-
-//     fetch("weather.json")
-//         .then(response => response.json())
-//         .then(data => { 
-//             let cityData = data.find(city => city.cityName.toLowerCase() === cityInput.toLowerCase());
-
-//             if (cityData) {
-//                 // Save data in localStorage so it's available on other pages
-//                 localStorage.setItem("weatherData", JSON.stringify(cityData));
-
-//                 document.getElementById("cityName").innerText = cityData.cityName;
-//                 document.getElementById("temperature").innerText = cityData.temperatureCelsius + "°C";
-//                 document.getElementById("humidity").innerText = (cityData.humidity * 100) + "%";
-//                 document.getElementById("uvIndex").innerText = cityData.uvIndex;
-//                 document.getElementById("windSpeed").innerText = cityData.windSpeed;
-//             } else {
-//                 alert("City not found. Try another location.");
-//             }
-//         })
-//         .catch(error => console.error("Error loading weather data:", error));
-// });
+}
