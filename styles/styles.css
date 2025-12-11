@@ -5,62 +5,6 @@ body {
 }
 /************* Nav Bar ****************/
 
-/* .topnavSidePage {
-  overflow: hidden;
-  background-color: #ffffff;
-  border-bottom:1px solid black;
-}
-.topnavSidePage a {
-  float: right;
-  display: block;
-  color: #6d6d6d;
-  text-align: center;
-  padding: 1.1rem .9rem;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-.topnavSidePage a:first-child{
-    float: left;
-}
-
-.topnav a:hover {
-  color: black;
-}
-
-.topnavSidePage a.active {
-  color: rgb(0, 0, 0);
-}
-.topnavSidePage .icon {
-  display: none;
-}
-
-@media screen and (max-width: 671px) {
-  .topnavSidePage a:not(:first-child) {
-    display: none;
-  }
-  .topnavSidePage a.icon {
-    float: right;
-    display: block !important;
-  }
-  .topnavSidePage.responsive {position: relative;}
-  .topnavSidePage.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnavSidePage.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
- .mySearchBar {
-    width: 150px;  
-    max-width: 80%;  
-  }
-} */
-
-/*********** Nav bar for not home page *********/
-
 .topnav {
   overflow: hidden;
   background-color: #ffffff;
