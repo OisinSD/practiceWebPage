@@ -7,21 +7,9 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>  
-    <div class="topnav" id="myTopnav">
-        <a href="../pages/index.html" class="active">Project Two</a>
-        
-        <input type="search" class="mySearchBar" placeholder="Search..." 
-            id="searching" oninput="searchForBooks()" autocomplete="off">
-
-        <a href="../pages/cart.html" class="menuItem">Cart</a>
-        <a href="../pages/newsletter.html" class="menuItem">News Letter</a>
-        <a href="../pages/christmas.html" class="menuItem">Christmas</a>
-
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </div>
+<body onload="navBar()">  
+   <div id="navBar">
+    </div>  
     <div>
         <p id="bookDisplay"></p>
     </div>

@@ -7,7 +7,7 @@ let bookData = [];
 /************** Fetching books from json file ***************/
 function loadBooks(){
 
-    fetch("../booktest.json")
+    fetch("../json/booktest.json")
     .then(response => response.json())
     .then(data => {
         bookData = data;
@@ -59,10 +59,11 @@ function printFunction(data){
             <div>
                 <img src="${data.image}" alt="${data.name}" class="book-cover">
             </div>
-            <div class="bookInfo" >
+            <div class="bookInfo">
                 <h4 class="bookName">${data.name}</h4>
                 <p>${data.author}</p>
                 <p class="price" >€${data.price}</p>
+                <button class="addToCartButton" role="button" onclick="">Add To Cart</button>
             </div>
         </div>`;
         // console.log("Making each book data a string", JSON.stringify(data));
@@ -101,8 +102,10 @@ function selectingBook(dataID){
     //  selectedBookRaw;
     try{
         let selectedBookRaw = localStorage.getItem("selectedBook");
+    
         if(selectedBookRaw){
             let selectedBook = JSON.parse(selectedBookRaw);
+            let discountPrice = selectedBook.price * 0.75;
             document.getElementById('bookDisplay').innerHTML = `
             <div class="bookContainer">
                 <div>
@@ -113,9 +116,12 @@ function selectingBook(dataID){
                     <br>
                     <p><b>Author:</b> ${selectedBook.author}</p>
                     <br>
-                    <p class="price">€${selectedBook.price}</p>
-                    <p>${selectedBook.quantity}</p>
-                    <br><br>
+                    <p class="price"><s>€${selectedBook.price}</s> €${discountPrice}</p>
+                    <br>
+                    <p>Only <u><b>${selectedBook.quantity}</b></u> left in Stock!!</p>
+                    <br>
+                    <p>${descriptionShorten(selectedBook.description)}<button onclick="scollToDescription()" class="readMoreLink"><u>read more</u></button></p>
+                    <br>
                     <button class="addToCartButton" role="button" onclick="addToCart('${selectedBook}')">Add To Cart</button>
                 
                 </div>
@@ -123,13 +129,13 @@ function selectingBook(dataID){
             <div class="spliter">
                 <hr>
             </div>
-            <div class="bookDescription">
+            <div id="individualBookDescription"class="bookDescription">
                 <h1>Description</h1>
                 <p>${selectedBook.description}</p>
             </div>
             `
             try{
-                console.log("LocalStorage is cleared", localStorage.clear());
+                // console.log("LocalStorage is cleared", localStorage.clear());
             }catch{
                 console.log("Failed to clear localStorage");
             }
@@ -139,9 +145,12 @@ function selectingBook(dataID){
     }
 })
 
-
-
-
+/*********** user pressed read more so is brought to description section in individual book page ************/
+function scollToDescription(){
+    document.getElementById('individualBookDescription').scrollIntoView({
+        behavior: "smooth"
+    });
+}
 
 /****** When handburger menu is clicked, CSS is changed *******/
 
@@ -153,11 +162,6 @@ function myFunction() {
     x.className = "topnav";
   }
 }
-
-
-
-
-
 
 /********* When user adds book to cart: user will be brought to Cart page with that specific books information ***********/
 
@@ -177,11 +181,10 @@ function addToCart(bookIDAddedToCart){
 
 
 
-/*********** fetching new information from json when user opens page ***********/
+/*********** fetching nav bar ***********/
 
-
-function navBar(){
-    fetch("../components/navBar.html")
+async function navBar(){
+    await fetch("../components/navBar.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById('navBar').innerHTML = data;
@@ -189,10 +192,13 @@ function navBar(){
     highlightActiveNav();
 }
 
+/********** Changing style class on current page link on navBar **********/
+
 function highlightActiveNav() {
     const links = document.querySelectorAll('#myTopnav a'); // all <a> in navbar
-    console.log("my nav links: ", links);
     const currentPath = window.location.pathname;
+
+    console.log("C Page:", currentPath, " | Links ", links);
 
     links.forEach(link => {
         // Remove any previous 'active'
@@ -206,17 +212,75 @@ function highlightActiveNav() {
     });
 }
 
-function loadNewsPage(){
-    console.log("Detection: News page has loaded");
-    let newData = [];
-    fetch("../news.json")
+/********** loading news information and printing it **********/
+
+async function loadNewsPage(){
+
+    console.log("News page loaded - Fetching news data");
+
+    let newsData = [];
+    let newsHTML = "";
+    
+    fetch("../json/news.json")
     .then(response => response.json())
     .then(data => {
-        data.map(item => {
-            document.getElementById('newsTopic').innerHTML += item.general_topic;
-        })
-    })
+        newsData = data;
+        
+        fetch("../components/newsCards.html")
+        .then(res => res.text())
+       .then(html => {
+           newsHTML = html;
+           
+           newsData.forEach((item,index) => {
+               if(index == newsData.length-1){
+                    document.getElementById('bigNews').innerHTML += `
+                    <div class="article-cardBig">
+                        <div class="cardBig-top">
+                            <span class="news-topicBig">${item.general_topic}</span>
+                            <span class="news-dateBig">${item.date}</span>
+                        </div>
 
+                        <div class="cardBig-bottom">
+                            <span class="bigNewsItemTitle"><b>${item.title}</b></span>
 
+                            <div class="writer-infoBig">
+                                <div class="writer-avatarBig"></div>
+                                <span>${item.writer}</span>
+                            </div>
+                        </div>
+                    </div>`;
+               } else{
 
+                    let filledHTML = newsHTML
+                   .replace("${item.general_topic}", item.general_topic)
+                   .replace("${item.read_time}", item.read_time)
+                   .replace("${item.date}", item.date)
+                   .replace("${item.image_link}", item.image_link)
+                   .replace("${item.title}", item.title)
+                   .replace("${item.description}", descriptionShorten(item.description))
+                   .replace("${item.writer}", item.writer);
+                   document.getElementById('newsCard').innerHTML += filledHTML;
+                   
+                }
+
+            })
+        });
+    });
 }
+
+
+// document.getElementById('card').addEventListener("click", () => {
+//     maxLenOfDescription = itemDescription.length;
+//     console.log("Length of news description:", itemDescription.length)
+//     descriptionShorten(itemDescription)
+// })
+
+//add an on click here to make the maxLenOfDescription longer 
+function descriptionShorten(itemDescription){
+    const maxLenOfDescription = 110;
+    let shortDescription = itemDescription.substring(0, maxLenOfDescription);
+    return shortDescription + "...";
+}
+
+
+/********** Fetching form for news page **********/

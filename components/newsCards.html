@@ -1,19 +1,27 @@
-<div class="article-card2">
-        <div class="article-info">
-            <div class="smallreportTopOfCard">
-                <p id="newsTopic">${item.general_topic}</p>
-                <p id="readLength">${item.read_time}</p>
-                <p id="newsDate">${item.date}</p>
-            </div>
-            <div class="smallreportCenterOfCard">
-                <image class="article-image" id="newImage" src="${item.image_link}"></image>
-                <p id="newsTitle">${item.title}</p>
-                <p id="newsDescription">${item.description}</p>
-            </div>
-            <div class="smallreportBottomOfCard">
-                <p id="newsWriter">${item.writer}</p>
-                
-            </div>
+<!-- Article Card -->
+<div class="article-card">
+    <!-- Top row: topic, read time, date -->
+    <div class="smallreportTopOfCard">
+        <span class="news-topic">${item.general_topic}</span>
+        <span class="read-length">${item.read_time}</span>
+        <span class="news-date">${item.date}</span>
+    </div>
+
+    <!-- Middle row: image + title/description -->
+    <div class="smallreportCenterOfCard">
+        <img class="article-image" src="${item.image_link}" alt="Article Image">
+        <div class="article-text">
+            <p class="article-title">${item.title}</p>
+            <p class="article-description">${item.description}</p>
         </div>
+    </div>
+
+    <!-- Bottom row: writer + bookmark -->
+    <div class="smallreportBottomOfCard">
+        <div class="writer-name">
+            <div class="writer-avatar"></div>
+            <span>${item.writer}</span>
+        </div>
+        <!-- <div class="bookmark">&#9734;</div>  -->
+    </div>
 </div>
- 

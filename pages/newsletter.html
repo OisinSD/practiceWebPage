@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sample Page</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/newsStyles.css"> 
+    <link rel="stylesheet" href="../styles/modalStyles.css">
 </head>
-<body onload="navBar();">  
-    <div id="navBar">
-    </div> 
+<body onload="navBar(); loadNewsPage(); printNewsLetterFrom()">  
 
-    
+    <div id="navBar"></div> 
 
-    <h1 class="title" >News Letter</h1>
-    
-      
-</body>
+    <h1 class="title" >Latest News</h1>
+
+    <div class="newsPage" >
+        <p id="newsCard"></p>
+        <p id="bigNews"></p>
+    </div>    
+
+    <div id="myModal" class="modal">
+        <div id="displayModal"></div>
+    </div>
+
+    <div class="spliter"><hr></div>
+
+    <div id="printForm"></div>
+
 <script src ="../app.js"></script>
+<script src ="../newsPage.js"></script>
+</body>
 </html>

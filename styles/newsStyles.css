@@ -1,0 +1,255 @@
+/*news page that holds the cards*/
+.newsPage{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right:20%;
+    margin-left: 20%;
+}
+
+/* Container for the card */
+.article-card {
+    display: flex;
+    flex-direction: column;
+    /* width: 350px; */
+    width: 23rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #f3f1f1;
+    /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+    font-family: Arial, sans-serif;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+}
+.article-card:hover{
+  cursor: pointer;
+  background-color: #f3f4f6;
+  box-shadow: -1px 2px 5px rgba(81,41,10,0.15),0px 1px 1px rgba(81,41,10,0.15);
+  transform: translateY(0.125rem);
+}
+
+/* Top row */
+.smallreportTopOfCard {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 8px;
+    gap: 0.5rem;
+}
+
+/* Middle row */
+.smallreportCenterOfCard {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.article-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #ccc;
+    margin-top: 1.2rem;
+}
+
+.article-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 0px;
+}
+
+.article-description {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.2;
+}
+
+/* Bottom row */
+.smallreportBottomOfCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #999;
+}
+
+.writer-name {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.writer-avatar {
+    width: 16px;
+    height: 16px;
+    background-color: #c0c0c0;
+    border-radius: 50%;
+}
+
+.bookmark {
+    font-size: 16px;
+    cursor: pointer;
+    color: #999;
+}
+
+/********** Big Article Card ***********/
+.article-cardBig {
+    background-image: linear-gradient(rgba(128,128,128,0), rgba(0,0,0,0.6)),
+        url("https://focus.independent.ie/thumbor/tJHCaIOw6WIFf0QTB9omdTgqrbs=/0x329:4820x3538/960x640/prod-mh-ireland/9946677d-e8e4-41d8-b873-5b0421dcafca/c077c44b-8784-4013-bf86-6efbf596f472/9946677d-e8e4-41d8-b873-5b0421dcafca.jpg");
+    background-size: cover;
+    background-position: center;
+    
+    width: 30rem;
+    height: 30rem;
+    padding: 1.2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-radius: 1rem;
+    /* box-shadow: 0 8px 12px rgba(0,0,0,0.3); */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .2);
+    transition: all .25s ease-in-out;
+    font-family: Arial, sans-serif;
+}
+.article-cardBig:hover {
+    cursor: pointer;
+    transform: translateY(3px);
+    box-shadow: -1px 2px 5px rgba(255,255,255,0.15), 0 1px 1px rgba(81,41,10,0.15);
+}
+.cardBig-top {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 12px;
+}
+.cardBig-bottom {
+    color: #fff;
+}
+.bigNewsItemTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+    display: block;
+}
+.writer-infoBig {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.writer-avatarBig {
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 941px) {
+    .newsPage {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .article-cardBig {
+        width: 23rem;
+    }
+}
+/********** News letter form styles ************/
+
+.newsFormDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:1rem;
+}
+.newsLetterForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid black; */
+    border-radius: .5rem;
+    padding:1rem;
+    color: rgb(0, 0, 0);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 16px 16px rgba(0, 0, 0, .4)  
+}
+.newsLetterEmailInput{
+    outline:none;
+    display: flex;
+    flex-direction: column;
+    /* color:blue */
+    
+    --input-default-border-color: rgb(255, 255, 255);
+    --input-border-bottom-color: rgb(255, 255, 255);
+}
+.emailInput{
+    outline: none;
+    border: 1px solid white;
+    border-bottom: 1px solid black;
+}
+.emailInput:focus{
+    border: 1px solid white;
+    border-bottom: 1px solid black;
+}
+.newsLetterNameInput{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.NameInput{
+    display: flex;
+    flex-direction: column;
+}
+.firstNameInput{
+    outline:none;
+    border:1px solid white;
+    border-bottom: 1px solid black;
+}
+
+.topicOptions{
+    display: flex;
+    flex-direction: column;
+}
+.submitBtn{
+    background-color:rgb(0, 221, 255);
+    padding: .4rem;
+}
+.submitBtn{
+  appearance: button;
+  background-image: linear-gradient(to bottom, #fff, #f8eedb);
+  border: 0 solid #e5e7eb;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-weight: 700;
+  padding: 1rem 1.5rem;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);
+}
+.submitBtn:hover {
+  background-color: #f3f4f6;
+  box-shadow: -1px 2px 5px rgba(81,41,10,0.15),0px 1px 1px rgba(81,41,10,0.15);
+  transform: translateY(0.125rem);
+}
+.submitBtn:focus {
+  box-shadow: rgba(72, 35, 7, .46) 0 0 0 4px, -6px 8px 10px rgba(81,41,10,0.1), 0px 2px 2px rgba(81,41,10,0.2);
+}
+.successfulFormSubmit{
+    display:none;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4rem;
+}
