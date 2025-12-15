@@ -1,0 +1,67 @@
+ <div id="shoppingCartCheckoutForm">
+        <form class="checkoutForm">
+          <div class="checkoutBasicInfo">
+            <h3>Your basic information</h3>
+            <div class="basicInfoNames">
+              <div>
+                <label for="checkoutFirstName">First name</label><br>
+                <input id="checkoutFirstName" type="text" autocomplete="off" name="checkoutFirstName" placeholder="Type here...">
+              </div>
+              <div>
+                <label for="checkoutSecondName">Second name</label><br>
+                <input id="checkoutSecondName" type="text" autocomplete="off" name="checkoutSecondName" placeholder="Type here...">
+              </div>
+            </div>
+            <div class="basicInfoEmail">
+              <br>
+              <label for="checkoutEmail">Email</label><br>
+              <input type="email" id="checkoutEmail" autocomplete="off" name="checkoutEmail" placeholder="Type here...">
+            </div>
+          </div>
+          <div class="checkoutPaymentInformation">
+            <div>
+              <div class="titleAandAcceptedCards">
+                <div>
+                  <h3>Your Payment Information</h3>
+                </div>
+                <div>
+
+                  <div class="icon-container">
+                    <label for="fname">Accepted Cards</label>
+                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                  </div>
+                </div>
+            </div>
+            </div>
+            <div class="checkoutPaymentInformationInputs">
+              <div>
+                <label for="checkoutCreditCardNumber">Credit Card</label><br>
+                <input class="creditCardNumberInput" type="number" id="checkoutCreditCardNumber" autocomplete="off" name="checkoutCreditCardNumber" placeholder="XXXX XXXX XXXX XXXX">
+              </div>
+              <div>
+                <label for="checkoutCreditCardExpiryDate">Expiry date</label><br>
+                <input class="checkoutCreditCardExpiryDate" type="date" id="checkoutCreditCardExpiryDate" autocomplete="off" name="checkoutCreditCardExpiryDate">
+              </div>
+              <div>
+                <label for="checkoutCreditCVC">CVC/CVV</label><br>
+                <input class="checkoutCreditCVC" type="number" id="checkoutCreditCVC" autocomplete="off" name="checkoutCreditCVC" placeholder="XXX" >
+              </div>
+            </div>
+            <br>
+            <button type="submit" class="buttonStyle">Procceed with purchase</button>
+          </div>
+          </form>
+      </div>
+      
+        <div class="Cart">
+          <h3>Your Cart</h3>
+            
+          <div id="myCart"> 
+          </div>
+          <p id="Price">Total Price: </p>
+          <p class = "cartButtons" onclick="ClearCart()">Clear Cart</p>
+        </div>
+      </div>

@@ -7,7 +7,8 @@
     "price": 14.99,
     "release_date": "1960-07-11",
     "image": "https://covers.openlibrary.org/b/id/8226096-L.jpg",
-    "quantity": 23
+    "quantity": 23,
+    "cartQuantity": 1
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "price": 12.50,
     "release_date": "1949-06-08",
     "image": "https://covers.openlibrary.org/b/id/7222246-L.jpg",
-    "quantity": 14
+    "quantity": 14,
+    "cartQuantity": 1
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "price": 10.99,
     "release_date": "1925-04-10",
     "image": "https://covers.openlibrary.org/b/id/10239036-L.jpg",
-    "quantity": 54
+    "quantity": 54,
+    "cartQuantity": 1
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "price": 9.99,
     "release_date": "1813-01-28",
     "image": "https://covers.openlibrary.org/b/id/8091016-L.jpg",
-    "quantity": 14
+    "quantity": 14,
+    "cartQuantity": 1
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
     "price": 15.99,
     "release_date": "1937-09-21",
     "image": "https://covers.openlibrary.org/b/id/6979861-L.jpg",
-    "quantity": 2
+    "quantity": 2,
+    "cartQuantity": 1
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
     "price": 11.50,
     "release_date": "1951-07-16",
     "image": "https://covers.openlibrary.org/b/id/8231856-L.jpg",
-    "quantity": 20
+    "quantity": 20,
+    "cartQuantity": 1
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@
     "price": 17.99,
     "release_date": "1954-07-29",
     "image": "https://covers.openlibrary.org/b/id/8135411-L.jpg",
-    "quantity": 16
+    "quantity": 16,
+    "cartQuantity": 1
   },
   {
     "id": 8,
@@ -77,7 +84,8 @@
     "price": 13.99,
     "release_date": "2008-09-14",
     "image": "https://covers.openlibrary.org/b/id/8165261-L.jpg",
-    "quantity": 30
+    "quantity": 30,
+    "cartQuantity": 1
   },
   {
     "id": 9,
@@ -87,7 +95,8 @@
     "price": 14.99,
     "release_date": "1997-06-26",
     "image": "https://covers.openlibrary.org/b/id/7888781-L.jpg",
-    "quantity": 27
+    "quantity": 27,
+    "cartQuantity": 1
   },
   {
     "id": 10,
@@ -97,6 +106,7 @@
     "price": 12.99,
     "release_date": "2012-01-10",
     "image": "https://covers.openlibrary.org/b/id/7894896-L.jpg",
-    "quantity": 39
+    "quantity": 39,
+    "cartQuantity": 1
   }
 ]

@@ -7,47 +7,14 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/cartStyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body onload="navBar()">  
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  </head>
+<body onload="navBar(); loadCheckoutForm();">  
     <div id="navBar">
     </div>
-    <h1 class="title" >Cart</h1>
+    <h1 class="title">Cart</h1>
 
     <div id="shoppingCartCheckoutPlusActiveCart" class="shoppingCartCheckoutPlusActiveCart">
-      <div id="shoppingCartCheckoutForm">
-        <form class="checkoutForm">
-          <div class="checkoutBasicInfo">
-            <h3>Your basic information</h3>
-            <div class="basicInfoNames">
-              <div>
-                <label for="checkoutFirstName">First name</label><br><br>
-                <input id="checkoutFirstName" type="text" autocomplete="off" name="checkoutFirstName" placeholder="Type here...">
-              </div>
-              <div>
-                <label for="checkoutSecondName">Second name</label><br><br>
-                <input id="checkoutSecondName" type="text" autocomplete="off" name="checkoutSecondName" placeholder="Type here...">
-              </div>
-            </div>
-            <div class="basicInfoEmail">
-              <br>
-              <label for="checkoutEmail">Email</label><br><br>
-              <input type="email" id="checkoutEmail" autocomplete="off" name="checkoutEmail" placeholder="Type here...">
-            </div>
-          </div>
-          <div>
-            <h3>Your Payment Information</h3>
-            <label for="checkoutCreditCardNumber">Credit Card</label><br>
-              <input type="number" id="checkoutCreditCardNumber" autocomplete="off" name="checkoutCreditCardNumber" placeholder="XXXX XXXX XXXX XXXX">
-            <label for="checkoutCreditCardExpiryDate">Expiry date</label><br>
-              <input type="number" id="checkoutCreditCardExpiryDate" autocomplete="off" name="checkoutCreditCardExpiryDate" placeholder="mm/yy">
-            <label for="checkoutCreditCVC">CVC/CVV</label><br>
-              <input type="number" id="checkoutCreditCVC" autocomplete="off" name="checkoutCreditCVC" placeholder="XXX">
-          </div>
-          </form>
-      </div>
-      <div>
-          
-      </div>
     </div>
 
     

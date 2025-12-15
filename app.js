@@ -1,6 +1,6 @@
 /********* Global variable to store books into when fetched so i can use it in other functions  **************/
 let bookData = [];     
-
+let selectedBooksToGoIntoCart = [];
 
 
 
@@ -63,14 +63,35 @@ function printFunction(data){
                 <h4 class="bookName">${data.name}</h4>
                 <p>${data.author}</p>
                 <p class="price" >€${data.price}</p>
-                <button class="addToCartButton" role="button" onclick="">Add To Cart</button>
-            </div>
+                </div>
+                <button class="addToCartButton" role="button" onClick="event.stopPropagation(); addToCartButton(${data.id});">Add To Cart</button>
         </div>`;
         // console.log("Making each book data a string", JSON.stringify(data));
     }); 
 }
 
 
+let booksInCart = []
+function addToCartButton(bookID){
+    booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
+
+    console.log("Current cart: ", booksInCart)
+    const book = bookData.find(book => book.id == bookID);
+    if(!book) return;
+
+    booksInCart.push(book);
+    // booksInCart += book;
+
+    localStorage.setItem("booksInCart", JSON.stringify(booksInCart));
+
+}
+
+// function readAllBooksInCartTest(){
+//     console.log("Books in cart by id", selectedBooksToGoIntoCart);
+//     let myBooks =  localStorage.getItem("booksInCart");
+//     let myBooksParsed = JSON.parse(myBooks);
+//     console.log("Books in cart", myBooksParsed);
+// }
 
 
 
