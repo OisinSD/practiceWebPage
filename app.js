@@ -2,11 +2,19 @@
 let bookData = [];     
 let selectedBooksToGoIntoCart = [];
 
+// function totalNumOfBooksInCart(){
+//     let myBooksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
+//     let totalNumOfBooksInCart = 0;
+//     myBooksInCart.map(item => {
+
+//         totalNumOfBooksInCart++; 
+//     })
+//     document.getElementById('totalNunOfBooksInCart').innerText = totalNumOfBooksInCart;
+// }
 
 
 /************** Fetching books from json file ***************/
 function loadBooks(){
-
     fetch("../json/booktest.json")
     .then(response => response.json())
     .then(data => {
@@ -19,9 +27,9 @@ function loadBooks(){
             document.getElementById('bookName').innerHTML = "Cannot Load Books...";
         }
     })
-    .catch(error => {
-        console.error("Error loading books: ", error)
-    });
+    // .catch(error => {
+    //     console.error("Error loading books: ", error)
+    // });
 }
 
 
@@ -49,11 +57,22 @@ function searchForBooks(){
 /**** Printing the books method *****/
 
 function printFunction(data){
-   let bookContainer = document.getElementById('bookName');
-   bookContainer.innerHTML = '';
+    let bookContainer = document.getElementById('bookName');
+    bookContainer.innerHTML = '';
+    let booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
+    console.log("Books in cart for printing books", booksInCart )
+
+
 
    data.forEach(data => {
-    // console.log("This is my book data", data);
+        const isInCart = booksInCart.some(item => item.id == data.id);
+        console.log("Is current book in cart?", isInCart);
+
+        const currentClass = isInCart ? "buttonStyleAdded" : "buttonStyle";
+        const buttonText = isInCart ? "Added" : "Add To Cart";
+
+
+
     bookContainer.innerHTML += `
         <div class="container" onclick="selectingBook('${data.id}')">
             <div>
@@ -64,34 +83,32 @@ function printFunction(data){
                 <p>${data.author}</p>
                 <p class="price" >€${data.price}</p>
                 </div>
-                <button class="addToCartButton" role="button" onClick="event.stopPropagation(); addToCartButton(${data.id});">Add To Cart</button>
+                <button id="addToCart-${data.id}" class="${currentClass}" role="button" onClick="event.stopPropagation(); addToCartButton(${data.id}); location.reload();">${buttonText}</button>
+                
         </div>`;
+        
         // console.log("Making each book data a string", JSON.stringify(data));
-    }); 
+    });
 }
 
 
 let booksInCart = []
 function addToCartButton(bookID){
+
     booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
 
     console.log("Current cart: ", booksInCart)
+
     const book = bookData.find(book => book.id == bookID);
     if(!book) return;
 
+    if(booksInCart.find(item => item.id == bookID)) return;
+
     booksInCart.push(book);
-    // booksInCart += book;
-
     localStorage.setItem("booksInCart", JSON.stringify(booksInCart));
-
+    totalNumOfBooksInCart();        
 }
 
-// function readAllBooksInCartTest(){
-//     console.log("Books in cart by id", selectedBooksToGoIntoCart);
-//     let myBooks =  localStorage.getItem("booksInCart");
-//     let myBooksParsed = JSON.parse(myBooks);
-//     console.log("Books in cart", myBooksParsed);
-// }
 
 
 
@@ -143,7 +160,7 @@ function selectingBook(dataID){
                     <br>
                     <p>${descriptionShorten(selectedBook.description)}<button onclick="scollToDescription()" class="readMoreLink"><u>read more</u></button></p>
                     <br>
-                    <button class="addToCartButton" role="button" onclick="addToCart('${selectedBook}')">Add To Cart</button>
+                    <button class="buttonStyle" role="button" onclick="addToCart('${selectedBook}')">Add To Cart</button>
                 
                 </div>
             </div>
