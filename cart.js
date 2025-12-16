@@ -31,7 +31,8 @@ function getBooksInCart(){
         <div class="cartCard">
             <div class="cardCardRows">
                 <p>${book.name}</p>
-                <i onClick="removeBookFromCart(${book.id})" class="fa-trash-o"></i>
+               
+                <span onClick="removeBookFromCart(${book.id})" class="material-symbols-outlined">delete</span> 
             </div>
         <div class="cardCardRows">
         <div>
@@ -45,7 +46,7 @@ function getBooksInCart(){
         </div>
         `
     })
-   
+    
 }
 
 
@@ -53,6 +54,11 @@ function removeBookFromCart(bookID){
     let booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
     console.log("Current books in Cart before deleting:", booksInCart);
     booksInCart = booksInCart.filter(book => book.id != bookID) ;
+    console.log("Current books in Cart after deleting:", booksInCart)
+    localStorage.clear();
+    localStorage.setItem("booksInCart", JSON.stringify(booksInCart));
+    getBooksInCart();
+    location.reload();
 }
 
 
@@ -84,7 +90,7 @@ function quantity(action, bookID) {
     calculateTotalPrice();
 }
 
-// let totelPrice = 0;
+let totelPrice = 0;
 function  calculateTotalPrice(){
     totalPrice = 0;
     let booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
@@ -92,11 +98,94 @@ function  calculateTotalPrice(){
         totalPrice += item.price * item.cartQuantity; 
     })
     console.log("TOtalPrice", totalPrice)
-    document.getElementById('Price').innerText = "Total Price: €" + Math.round(totalPrice);
+    document.getElementById('Price').innerText = "Total: €" + totalPrice.toFixed(2);
     console.log("Total price: ", totalPrice);
 }
 
 function ClearCart(){
     localStorage.clear();
     location.reload();
+}
+
+
+function customerBuysBooks(){
+    let booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
+    console.log("empty Cart Test", booksInCart);
+    if(booksInCart.length == 0) return;
+
+    event.preventDefault();
+    loadLoadingIcon();
+    window.setTimeout(test, 3000);
+    // test()
+
+    
+
+
+    //loading set timer
+    //bring to new page or hide all cart information 
+    //Successful message 
+    // link to home page to buy more books localstorage is cleared
+}
+
+function loadLoadingIcon(){
+    // document.body.style.filter = 'blur(2px)';
+    document.getElementById('loading').innerHTML = `
+    <div class="blurEffect"></div>
+    <div>
+    <img src="https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-loading-indicator-icon-vector-illustration-design-progression-site-load-vector-png-image_37466228.png" alt="loading..." class="loadingImg"> 
+    </div>`
+}
+
+function test(){
+        let booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
+        document.getElementById('shoppingCartCheckoutPlusActiveCart').style.display = "none";
+        console.log("total price from buy button");
+
+        let boughtItems = document.getElementById('userSuccessfullyBoughtItems').innerHTML;
+        let finalTotalPrice = 0;
+            boughtItems = `
+            <div class="successfullPurchase">
+                <h3>✅ Successful Purchase!</h3>
+                <h4>Thanks for shopping with us! We’ve received your order and will let you know once it ships.<h4>
+            
+                <div class="article-card">
+                    <div class="smallreportTopOfCard">
+                        <h3>Your Purchase order</h3>
+                        <h3>Order No. ${(Math.random()* 3000).toFixed(0)}</h3>
+                    </div>
+                    <div class="spliter">
+                        <hr>
+                    </div>
+                    <div class="smallreportTopOfCard">
+                        <h3>Summary of Purchase</h3>
+                    </div>
+                    
+                        <div class="ItemsInReceipt">`;
+                            booksInCart.forEach(item =>{
+                                finalTotalPrice += item.price * item.cartQuantity; 
+                                boughtItems += `
+                                <div class="containerItemsInReceipt">
+                                    <p>${item.name}</p>
+                                    <p>€${(item.price *.75).toFixed(2)}</p>
+                                </div>`
+                            });
+                    boughtItems += `
+                        </div>
+                        <div class="spliter">
+                        <hr>
+                    </div>
+                    <div class="smallreportTopOfCard">
+                        <h3>Total: </h3>
+                        <h3>€${finalTotalPrice.toFixed(2)}</h3>
+                    </div>
+                    <button onclick="continueShoppingAfterPurchase()" class="buttonStyle">Continue Shopping</button>
+                    </div>
+            </div>
+            `
+             document.getElementById('userSuccessfullyBoughtItems').innerHTML = boughtItems;
+}
+
+function continueShoppingAfterPurchase(){
+    window.location.href = "../pages/index.html";
+    localStorage.clear();
 }

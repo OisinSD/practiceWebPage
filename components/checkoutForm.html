@@ -5,17 +5,17 @@
             <div class="basicInfoNames">
               <div>
                 <label for="checkoutFirstName">First name</label><br>
-                <input id="checkoutFirstName" type="text" autocomplete="off" name="checkoutFirstName" placeholder="Type here...">
+                <input id="checkoutFirstName" type="text" autocomplete="off" name="checkoutFirstName" placeholder="Type here..." required>
               </div>
               <div>
                 <label for="checkoutSecondName">Second name</label><br>
-                <input id="checkoutSecondName" type="text" autocomplete="off" name="checkoutSecondName" placeholder="Type here...">
+                <input id="checkoutSecondName" type="text" autocomplete="off" name="checkoutSecondName" placeholder="Optional...">
               </div>
             </div>
             <div class="basicInfoEmail">
               <br>
               <label for="checkoutEmail">Email</label><br>
-              <input type="email" id="checkoutEmail" autocomplete="off" name="checkoutEmail" placeholder="Type here...">
+              <input type="email" id="checkoutEmail" autocomplete="off" name="checkoutEmail" placeholder="Type here..." required>
             </div>
           </div>
           <div class="checkoutPaymentInformation">
@@ -39,20 +39,20 @@
             <div class="checkoutPaymentInformationInputs">
               <div>
                 <label for="checkoutCreditCardNumber">Credit Card</label><br>
-                <input class="creditCardNumberInput" type="number" id="checkoutCreditCardNumber" autocomplete="off" name="checkoutCreditCardNumber" placeholder="XXXX XXXX XXXX XXXX">
+                <input class="creditCardNumberInput" type="number" id="checkoutCreditCardNumber" autocomplete="off" name="checkoutCreditCardNumber" placeholder="XXXX XXXX XXXX XXXX" required>
               </div>
               <div>
                 <label for="checkoutCreditCardExpiryDate">Expiry date</label><br>
-                <input class="checkoutCreditCardExpiryDate" type="date" id="checkoutCreditCardExpiryDate" autocomplete="off" name="checkoutCreditCardExpiryDate">
+                <input class="checkoutCreditCardExpiryDate" type="date" id="checkoutCreditCardExpiryDate" autocomplete="off" name="checkoutCreditCardExpiryDate" required>
               </div>
               <div>
                 <label for="checkoutCreditCVC">CVC/CVV</label><br>
-                <input class="checkoutCreditCVC" type="number" id="checkoutCreditCVC" autocomplete="off" name="checkoutCreditCVC" placeholder="XXX" >
+                <input class="checkoutCreditCVC" type="number" id="checkoutCreditCVC" autocomplete="off" name="checkoutCreditCVC" placeholder="XXX" required>
               </div>
             </div>
             <br>
-            <button type="submit" class="buttonStyle">Procceed with purchase</button>
-          </div>
+            <button class="buttonStyle" onclick="customerBuysBooks()">Procceed with purchase</button>
+          </div>  
           </form>
       </div>
       
@@ -61,7 +61,9 @@
             
           <div id="myCart"> 
           </div>
-          <p id="Price">Total Price: </p>
-          <p class = "cartButtons" onclick="ClearCart()">Clear Cart</p>
+          <div class="checkoutPaymentInformationInputs">
+            <p id="Price">Total Price: </p>
+            <p class = "cartButtons" onclick="ClearCart()">Clear Cart</p>
+          </div>
         </div>
       </div>

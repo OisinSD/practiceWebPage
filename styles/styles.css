@@ -241,7 +241,19 @@ footer{
   box-shadow: rgba(72, 35, 7, .46) 0 0 0 4px, -6px 8px 10px rgba(81,41,10,0.1), 0px 2px 2px rgba(81,41,10,0.2);
 }
 
-
+.buttonStyleAdded{
+  appearance: button;
+  display:flex;
+  background-image: linear-gradient(to bottom, #ffffff, #8dfa8b);
+  border: 0 solid #e5e7eb;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-weight: 700;
+  padding: 1rem 1.5rem;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);
+}
 /************ Divider ************/
 
 .bookDescription {
@@ -282,5 +294,35 @@ footer{
   cursor: pointer;
 }
 
-/********* shopping cart styles **********/
+/********* loading icon styles **********/
 
+@keyframes myloadingBarAnimation {
+  10%{rotate: 36deg;}
+  20%{rotate: 72deg;}
+  30%{rotate: 108deg;}
+  40%{rotate: 144deg;}
+  50%{rotate: 180deg;}
+  60%{rotate: 216deg;}
+  70%{rotate: 252deg;}
+  80%{rotate: 288deg;}
+  90%{rotate: 324deg;}
+  100%{rotate: 260deg;}
+
+}
+
+.loadingImg{
+  position: absolute;
+  top: 26%;
+  left:38%;
+  z-index: 100;
+  animation-name: myloadingBarAnimation;
+  animation-duration: 4s;
+}
+
+.blurEffect{
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 50;
+}

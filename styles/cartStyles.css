@@ -20,6 +20,8 @@
   background-color: rgb(245, 245, 245);
   width: 100%;
   transition: all 2s;
+  padding-top:0;
+  
 }
 .basicInfoNames{
   display: flex;
@@ -70,8 +72,10 @@ input[type=number] {
 .checkoutPaymentInformationInputs{
   display: flex;
   flex-direction: row;  
+  justify-content: space-between;
   gap:1rem;
   transition: all 2s;
+  padding-bottom: 20px;
 }
 
 /**** Cart stylings*****/
@@ -79,13 +83,15 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   border: 2px solid black;
-  height: 20.8rem;
+  /* height: 20.8rem; */
   border-radius: .5rem;
   background-color: rgb(245, 245, 245);
   width: 15rem;
-  height: 22.7rem;
+  height: 24rem;
   padding: 1rem;
+  padding-top: 0;
   overflow:auto;
+  min-width: 13rem;
 }
 .icon-container{
   padding-top: 1.4rem;
@@ -160,7 +166,8 @@ input[type=number] {
   padding-left: .5rem;
   padding-right: .5rem;
   border-radius: .4rem;
-  margin:1rem
+  margin:1rem;
+  min-width: 10rem;
 }
 .cardCardRows{
   display: flex;
