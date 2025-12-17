@@ -189,6 +189,6 @@ function test(){
 }
 
 function continueShoppingAfterPurchase(){
-    window.location.href = "../index.html";
+    window.location.href = "../pages/index.html";
     localStorage.clear();
 }
