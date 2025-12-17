@@ -111,7 +111,10 @@ function ClearCart(){
 function customerBuysBooks(){
     let booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
     console.log("empty Cart Test", booksInCart);
-    if(booksInCart.length == 0) return;
+    if(booksInCart.length == 0) {
+        alert("You Curently Have No Items In Your Cart.");
+        return;
+    }
 
     event.preventDefault();
     loadLoadingIcon();
@@ -186,6 +189,6 @@ function test(){
 }
 
 function continueShoppingAfterPurchase(){
-    window.location.href = "../pages/index.html";
+    window.location.href = "../index.html";
     localStorage.clear();
 }

@@ -82,7 +82,7 @@ function printNewsLetterFrom(){
   </div>
 </div>
 <div class="successfulFormSubmit" id="successfulFormSubmit" >
-    <h3>✅ Form submitted successfully!</h3>
+   
     <p id = "personalisedMessage"></p>
 </div>
 `
