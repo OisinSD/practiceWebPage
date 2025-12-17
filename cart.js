@@ -17,7 +17,7 @@ function totalNumOfBooksInCart(){
 
         totalNumOfBooksInCart++; 
     })
-    document.getElementById('totalNunOfBooksInCart').innerText = totalNumOfBooksInCart;
+    document.getElementById('totalNumOfBooksInCart').innerText = totalNumOfBooksInCart;
 }
 
 function getBooksInCart(){
@@ -31,8 +31,7 @@ function getBooksInCart(){
         <div class="cartCard">
             <div class="cardCardRows">
                 <p>${book.name}</p>
-               
-                <span onClick="removeBookFromCart(${book.id})" class="material-symbols-outlined">delete</span> 
+                <i onClick="removeBookFromCart(${book.id})" class="fa-trash-o"></i>
             </div>
         <div class="cardCardRows">
         <div>
@@ -46,7 +45,7 @@ function getBooksInCart(){
         </div>
         `
     })
-    
+   
 }
 
 
@@ -54,11 +53,6 @@ function removeBookFromCart(bookID){
     let booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
     console.log("Current books in Cart before deleting:", booksInCart);
     booksInCart = booksInCart.filter(book => book.id != bookID) ;
-    console.log("Current books in Cart after deleting:", booksInCart)
-    localStorage.clear();
-    localStorage.setItem("booksInCart", JSON.stringify(booksInCart));
-    getBooksInCart();
-    location.reload();
 }
 
 
@@ -90,7 +84,7 @@ function quantity(action, bookID) {
     calculateTotalPrice();
 }
 
-let totelPrice = 0;
+// let totelPrice = 0;
 function  calculateTotalPrice(){
     totalPrice = 0;
     let booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
@@ -98,7 +92,7 @@ function  calculateTotalPrice(){
         totalPrice += item.price * item.cartQuantity; 
     })
     console.log("TOtalPrice", totalPrice)
-    document.getElementById('Price').innerText = "Total: €" + totalPrice.toFixed(2);
+    document.getElementById('Price').innerText = "Total Price: €" + totalPrice.toFixed(2);
     console.log("Total price: ", totalPrice);
 }
 
@@ -169,7 +163,7 @@ function test(){
                                 boughtItems += `
                                 <div class="containerItemsInReceipt">
                                     <p>${item.name}</p>
-                                    <p>€${(item.price *.75).toFixed(2)}</p>
+                                    <p>€${((item.price).toFixed(2))*item.cartQuantity}</p>
                                 </div>`
                             });
                     boughtItems += `
