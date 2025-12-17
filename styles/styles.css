@@ -41,6 +41,9 @@ body {
   right: 7px;
   top:10px
 }
+.removeSearchBar input{
+display:none;
+}
 
 @media screen and (max-width: 671px) {
   .topnav a:not(:first-child) { 
@@ -218,17 +221,17 @@ footer{
   padding-left: 15%;
 }
 .buttonStyle{
-  appearance: button;
+  /* appearance: button; */
   background-image: linear-gradient(to bottom, #fff, #f8eedb);
   border: 0 solid #e5e7eb;
   border-radius: .5rem;
   cursor: pointer;
   font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-weight: 700;
+  /* font-size: 1.1rem; */
   padding: 1rem 1.5rem;
   transition: all .1s cubic-bezier(.4, 0, .2, 1);
   box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);
-  
 }
 
 .buttonStyle:hover {
@@ -325,4 +328,12 @@ footer{
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   z-index: 50;
+}
+
+
+/******** footer ***********/
+footer{
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 5rem;
 }
