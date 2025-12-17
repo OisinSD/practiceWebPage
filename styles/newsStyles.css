@@ -12,8 +12,8 @@
 .article-card {
     display: flex;
     flex-direction: column;
-    /* width: 350px; */
-    width: 23rem;
+    min-width: 15rem;
+    max-width: 23rem;
     border-radius: 1rem;
     padding: 1rem;
     margin: 1rem;
@@ -120,7 +120,7 @@
     border-radius: 1rem;
     /* box-shadow: 0 8px 12px rgba(0,0,0,0.3); */
     box-shadow: 0 8px 16px rgba(0, 0, 0, .2);
-    transition: all .25s ease-in-out;
+    transition: all 1s ease-in-out;
     font-family: Arial, sans-serif;
 }
 .article-cardBig:hover {
@@ -154,17 +154,6 @@
     background-color: #fff;
     border-radius: 50%;
 }
-
-@media screen and (max-width: 941px) {
-    .newsPage {
-        flex-direction: column;
-        margin: 0;
-    }
-
-    .article-cardBig {
-        width: 23rem;
-    }
-}
 /********** News letter form styles ************/
 
 .newsFormDiv{
@@ -183,7 +172,8 @@
     padding:1rem;
     color: rgb(0, 0, 0);
     background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 16px 16px rgba(0, 0, 0, .4)  
+    box-shadow: 0 16px 16px rgba(0, 0, 0, .4);
+    /* width: 15rem; */
 }
 .newsLetterEmailInput{
     outline:none;
@@ -252,4 +242,24 @@
     align-items: center;
     justify-content: center;
     padding-bottom: 4rem;
+}
+@media screen and (max-width: 941px) {
+    .newsPage {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .article-cardBig {
+        width: 23rem;
+    }
+    .article-cardBig{
+        width: 15rem;
+        height: 15rem;
+    }
+
+}
+@media screen and (max-width: 400px){
+    .newsLetterNameInput{
+        flex-direction: column;
+    }
 }
