@@ -1,0 +1,54 @@
+body, html {
+    height: 100%;  
+    box-sizing: border-box;
+}
+
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://childrensbookproject.co.uk/wp-content/themes/bookproject/assets/images/PXL_2023.jpg");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border-bottom: 2px solid black;
+  transition: all 2s;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+/* Brand / main title */
+.aboutUsTitle {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Subtitle */
+.aboutUsSubtitle {
+  margin-top: 0.5rem;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 671px){
+  .hero-image{
+    max-height:40%;
+
+  }
+}

@@ -14,14 +14,14 @@ let selectedBooksToGoIntoCart = [];
 
 
 /************** Fetching books from json file ***************/
-function loadBooks(){
+function loadBooks(limit = null){
     fetch("../json/booktest.json")
     .then(response => response.json())
     .then(data => {
         bookData = data;
         //   console.log("This is the book Data:" + data.name)
         if(document.getElementById('bookName')){
-            printFunction(data);
+            printFunction(data, limit);
         } else{
             console.log("Cannot Load Book Data")
             document.getElementById('bookName').innerHTML = "Cannot Load Books...";
@@ -56,15 +56,15 @@ function searchForBooks(){
 
 /**** Printing the books method *****/
 
-function printFunction(data){
+function printFunction(data, limit = null){
     let bookContainer = document.getElementById('bookName');
     bookContainer.innerHTML = '';
     let booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
     console.log("Books in cart for printing books", booksInCart )
 
+    const booksToRender = limit ? data.slice(data.length - limit, data.length) : data;
 
-
-   data.forEach(data => {
+   booksToRender.forEach(data => {
         const isInCart = booksInCart.some(item => item.id == data.id);
         console.log("Is current book in cart?", isInCart);
 
@@ -321,4 +321,12 @@ function descriptionShorten(itemDescription){
 }
 
 
-/********** Fetching form for news page **********/
+/********** Loading footer **********/
+
+function loadMyFooter(){
+    fetch("../components/footer.html")
+    .then(response => response.text())
+    .then(footerHTML => {
+        document.getElementById('myFooter').innerHTML = footerHTML;
+    })
+}

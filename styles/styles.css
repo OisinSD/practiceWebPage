@@ -15,9 +15,9 @@ body {
   display: block;
   color: #6d6d6d;
   text-align: center;
-  padding: 1.1rem .9rem;
+  padding: 1.1rem 2rem;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 .topnav a:first-child{
     float: left;
@@ -103,7 +103,7 @@ display:none;
   transition: all .5s;
 }
 /*************** Book Cards ******************/
-#bookName {
+.bookName {
     display: flex;       
     flex-wrap:wrap;    
     gap: 0px;
@@ -310,7 +310,6 @@ footer{
   80%{rotate: 288deg;}
   90%{rotate: 324deg;}
   100%{rotate: 260deg;}
-
 }
 
 .loadingImg{
@@ -336,4 +335,39 @@ footer{
   background-color: #f1f1f1;
   text-align: center;
   padding: 5rem;
+}
+
+.site-footer {
+  background: linear-gradient(135deg, #111, #1c1c1c);
+  color: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.footer-line {
+  width: 60px;
+  height: 2px;
+  background: #fff;
+  opacity: 0.3;
+  margin: 0 auto 1.2rem;
+}
+
+.footer-text {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
 }

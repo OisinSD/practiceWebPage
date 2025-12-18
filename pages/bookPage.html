@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body onload="navBar();totalNumOfBooksInCart(); ">  
+<body onload="navBar();totalNumOfBooksInCart(); loadMyFooter();">  
    <div id="navBar" class="removeSearchBar">
     </div>  
     <span class="numOfItemsInCart" id="totalNumOfBooksInCart"></span>
     <div>
         <p id="bookDisplay"></p>
     </div>
+
+    <div id="myFooter"></div>
+
     <script src ="../app.js"></script>
     <script src ="../cart.js"></script>
 </body>

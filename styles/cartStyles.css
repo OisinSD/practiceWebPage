@@ -215,3 +215,16 @@ padding-right: .4rem;
     /* margin-bottom: 8px;
     gap: 0.5rem; */
 }
+
+.bookRecommendationContainer{
+
+}
+
+.bookCardsRecommendations{
+ 
+  display: flex;       
+    flex-wrap:wrap;   
+    justify-content: center;
+  gap: 1.5rem;
+  
+}
