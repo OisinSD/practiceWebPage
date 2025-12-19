@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../styles/styles.css"> 
     <!-- Hero Image Styling -->
     <link rel="stylesheet" href="../styles/aboutUs.css">
-    <!-- Font Awesome Icons -->
+    <!-- Handbuger Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -17,11 +17,9 @@
 <!-- Page-specific JS initialisation -->
 <body onload="navBar(); totalNumOfBooksInCart(); loadBooks();  loadMyFooter();">  
     
-    <header>
-        <!-- NavBar Injected Via JS -->
+    <!-- NavBar Injected Via JS With Cart Item Counter-->
+    <header class="bringToFront">
         <div id="navBar"></div>
-
-        <!-- Cart Item Counter-->
         <span class="numOfItemsInCart" id="totalNumOfBooksInCart"></span>
     </header>
 
@@ -48,8 +46,8 @@
 
     </main>
 
-    <!-- Site Footer Injected Via JS -->
-    <footer>
+<!-- NavBar Injected Via JS -->
+    <footer class="site-footer">
         <div id="myFooter"></div>
     </footer>
     

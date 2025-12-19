@@ -3,33 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Page</title>
+    <title>Nook Shopping Cart</title>
+
+    <!-- Page and Component Structure Styling -->
     <link rel="stylesheet" href="../styles/styles.css">
+    <!-- Checkout cart and form styles -->
     <link rel="stylesheet" href="../styles/cartStyles.css">
+    <!-- Receipt Container used from news cards -->
     <link rel="stylesheet" href="../styles/newsStyles.css"> 
+    <!-- bin icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete">
+    <!-- accepted card icons from w3schools -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete">
-  </head>
-<body onload="navBar(); loadBooks(3); loadCheckoutForm(); totalNumOfBooksInCart(); loadMyFooter();">  
-    <div id="navBar" class="removeSearchBar">
-    </div>
-    <span class="numOfItemsInCart" id="totalNumOfBooksInCart"></span>
-    <h1 class="title">Cart</h1>
+
+</head>
+
+<!-- Page-specific JS initialisation -->
+<body onload="navBar(); loadBooks(3); loadCheckoutForm(); totalNumOfBooksInCart(); loadMyFooter();"> 
+    <header>
+        <!-- NavBar Injected Via JS --> 
+        <div id="navBar" class="removeSearchBar"></div>
+        <!-- Cart Item Counter-->
+        <span class="numOfItemsInCart" id="totalNumOfBooksInCart"></span>
+    </header> 
+
+    <main>
+
+        <section>
+            <h1 class="title">Cart</h1>
+            <!-- renders checkoutform and cart Via JS -->
+            <div id="shoppingCartCheckoutPlusActiveCart" class="shoppingCartCheckoutPlusActiveCart"></div>
+        </section>
+
+        <section> 
+            <!-- renders 3 books from JSON -->
+            <div class="bookRecommendationsContainer" id="bookCardsRecommendations">
+                <h3 class="title">You might also like</h3>
+                <div id="bookName" class="bookCardsRecommendations"></div>
+            </div>
+        </section>
+
+        <section>
+           <!-- Loading and successful purchase message rendered via JS -->
+           <div id="userSuccessfullyBoughtItems">
+               <div id="loading"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Site Footer Injected Via JS -->
+    <footer class="site-footer">
+        <div id="myFooter"></div>
+    </footer>
     
-    <div id="shoppingCartCheckoutPlusActiveCart" class="shoppingCartCheckoutPlusActiveCart">
-    </div>
-    <div class="bookRecommendationContainer">
-        <h3 class="title">You might also like</h3>
-        <div id="bookName" class="bookCardsRecommendations"></div>
-    </div>
-    
-    
-    <div id="userSuccessfullyBoughtItems">
-        <div id="loading"></div>
-    </div>
-    <div id="myFooter"></div>
-    
+    <!-- JS functionality:
+     - Fetches and displays 3 books data from JSON
+     - Handles add-to-cart, and book selection
+     - Injects navbar and footer -->
     <script src ="../js/app.js"></script>
+
+    <!-- JS functionality:
+     - num of items in cart counter in navbar
+     - fetches and renders checkout form and receipt
+     - displays books in cart from localstorage
+     - remove, plus, minus and clear books from cart
+     - book quantity alerts
+     - calculates prices-->
     <script src ="../js/cart.js"></script>
+
 </body>
 </html>

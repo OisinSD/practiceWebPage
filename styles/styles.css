@@ -26,6 +26,7 @@ footer {
   padding: 1.1rem 2rem;
   text-decoration: none;
   font-size: 1.4rem;
+  transition:all 2s;
 }
 .topnav a:first-child{
     float: left;
@@ -39,6 +40,8 @@ footer {
 
 .topnav a.active {
   color: rgb(0, 0, 0);
+  text-decoration-line: underline;
+  /* transform: ; */
 }
 .topnav .icon {
   display: none;
@@ -229,7 +232,8 @@ footer{
   padding-left: 15%;
 }
 .buttonStyle{
-  /* appearance: button; */
+  appearance: button;
+  /* display:flex; */
   background-image: linear-gradient(to bottom, #fff, #f8eedb);
   border: 0 solid #e5e7eb;
   border-radius: .5rem;
@@ -237,6 +241,7 @@ footer{
   font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-weight: 700;
   /* font-size: 1.1rem; */
+  /* width:100%; */
   padding: 1rem 1.5rem;
   transition: all .1s cubic-bezier(.4, 0, .2, 1);
   box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);
@@ -286,12 +291,20 @@ footer{
         width: 60%;
         max-width: 250px;
     }
-
+    .buttonStyle{
+       padding: 10px 5%;
+    }
     .bookDescription {
         padding: 10px 5%;
     }
     .title{
         font-size:1.55rem;
+    }
+    .loadingImg{
+      position: absolute;
+      top: 40%;
+      left:0;
+      width: 13rem;
     }
 }
 
@@ -378,4 +391,8 @@ footer{
   font-size: 0.85rem;
   letter-spacing: 0.15em;
   opacity: 0.6;
+}
+
+.bringToFront{
+  z-index: 400;
 }

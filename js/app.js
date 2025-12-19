@@ -1,16 +1,8 @@
 /********* Global variable to store books into when fetched so i can use it in other functions  **************/
 let bookData = [];     
 let selectedBooksToGoIntoCart = [];
+let booksInCart = []
 
-// function totalNumOfBooksInCart(){
-//     let myBooksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
-//     let totalNumOfBooksInCart = 0;
-//     myBooksInCart.map(item => {
-
-//         totalNumOfBooksInCart++; 
-//     })
-//     document.getElementById('totalNunOfBooksInCart').innerText = totalNumOfBooksInCart;
-// }
 
 
 /************** Fetching books from json file ***************/
@@ -27,9 +19,9 @@ function loadBooks(limit = null){
             document.getElementById('bookName').innerHTML = "Cannot Load Books...";
         }
     })
-    // .catch(error => {
-    //     console.error("Error loading books: ", error)
-    // });
+    .catch(error => {
+        console.error("Error loading books: ", error)
+    });
 }
 
 
@@ -54,7 +46,9 @@ function searchForBooks(){
 
 
 
-/**** Printing the books method *****/
+/**** Printing the books to home page and 3 books for cart page *****/
+// I pass through a limit beacuse on the cart page i call this function and only want to receive  3 books. 
+// Therefore I am passing through 3, as the limit (if limit is not passed through limit = null)
 
 function printFunction(data, limit = null){
     let bookContainer = document.getElementById('bookName');
@@ -69,7 +63,7 @@ function printFunction(data, limit = null){
         console.log("Is current book in cart?", isInCart);
 
         const currentClass = isInCart ? "buttonStyleAdded" : "buttonStyle";
-        const buttonText = isInCart ? "Added" : "Add To Cart";
+        const buttonText = isInCart ? "Added" : "Add to cart";
 
 
 
@@ -83,31 +77,15 @@ function printFunction(data, limit = null){
                 <p>${data.author}</p>
                 <p class="price" >€${data.price}</p>
                 </div>
-                <button id="addToCart-${data.id}" class="${currentClass}" role="button" onClick="event.stopPropagation(); addToCartButton(${data.id}); location.reload();">${buttonText}</button>
+                <button id="addToCart-${data.id}" class="${currentClass}" role="button" onClick="event.stopPropagation(); addToCartButton(${data.id}); ">${buttonText}</button>
                 
         </div>`;
-        
+        //Testing
         // console.log("Making each book data a string", JSON.stringify(data));
     });
 }
 
 
-let booksInCart = []
-function addToCartButton(bookID){
-
-    booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
-
-    console.log("Current cart: ", booksInCart)
-
-    const book = bookData.find(book => book.id == bookID);
-    if(!book) return;
-
-    if(booksInCart.find(item => item.id == bookID)) return;
-
-    booksInCart.push(book);
-    localStorage.setItem("booksInCart", JSON.stringify(booksInCart));
-    totalNumOfBooksInCart();        
-}
 
 
 
@@ -117,6 +95,7 @@ function addToCartButton(bookID){
 function selectingBook(dataID){
     let book = bookData.find(book => book.id == dataID)
 
+        //testing
         // console.log("book data", book); 
     if(book){
 
@@ -125,6 +104,7 @@ function selectingBook(dataID){
     }else{
         console.log("Unable to setItem");
     }
+        //testing
         // console.log("Local storage: ", localStorage.getItem("selectedBook")); //Test if data is being set to local storage
     }
         
@@ -137,13 +117,23 @@ function selectingBook(dataID){
 
     document.addEventListener("DOMContentLoaded", () => {
     console.log("eventListener occured");
-    //  selectedBookRaw;
     try{
         let selectedBookRaw = localStorage.getItem("selectedBook");
     
         if(selectedBookRaw){
             let selectedBook = JSON.parse(selectedBookRaw);
+
             let discountPrice = selectedBook.price * 0.75;
+
+            booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
+
+            const isInCart = booksInCart.some(item => item.id == selectedBook.id);
+            console.log("Testing", selectedBook.id, "is in cart", isInCart)
+
+            const currentClass = isInCart ? "buttonStyleAdded" : "buttonStyle";
+            const buttonText = isInCart ? "Added" : "Add to cart";
+
+
             document.getElementById('bookDisplay').innerHTML = `
             <div class="bookContainer">
                 <div>
@@ -154,14 +144,17 @@ function selectingBook(dataID){
                     <br>
                     <p><b>Author:</b> ${selectedBook.author}</p>
                     <br>
-                    <p class="price"><s>€${selectedBook.price}</s> €${discountPrice}</p>
+                    <p class="price"><s>€${selectedBook.price}</s> - €${discountPrice.toFixed(2)}</p>
                     <br>
                     <p>Only <u><b>${selectedBook.quantity}</b></u> left in Stock!!</p>
                     <br>
                     <p>${descriptionShorten(selectedBook.description)}<button onclick="scollToDescription()" class="readMoreLink"><u>read more</u></button></p>
                     <br>
-                    <button class="buttonStyle" role="button" onclick="addToCart('${selectedBook}')">Add To Cart</button>
-                
+                    
+                    <button id="addToCart-${selectedBook.id}" class="${currentClass}" role="button"
+                    onclick="event.stopPropagation(); addToCartButton(${selectedBook.id}); ">
+                    ${buttonText}
+                    </button>                
                 </div>
             </div>
             <div class="spliter">
@@ -172,25 +165,59 @@ function selectingBook(dataID){
                 <p>${selectedBook.description}</p>
             </div>
             `
-            try{
-                // console.log("LocalStorage is cleared", localStorage.clear());
-            }catch{
-                console.log("Failed to clear localStorage");
-            }
         }
     }catch{
         console.log("Tried to getItems but failed");
     }
 })
 
-/*********** user pressed read more so is brought to description section in individual book page ************/
+
+
+/*********** function takes in book id and saves it to local storage ************/
+    // It first checks if book is in local storage already to not make duplicates 
+
+function addToCartButton(bookID){
+    console.log("yes it is being called with individual book page button", bookID)
+
+    booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
+
+    console.log("Current cart: ", booksInCart)
+
+    const book = bookData.find(book => book.id == bookID);
+    console.log("checking to see book is found", book)
+    if(!book) return;
+
+    if(booksInCart.find(item => item.id == bookID)) return;
+
+    booksInCart.push(book);
+    
+    localStorage.setItem("booksInCart", JSON.stringify(booksInCart));
+    totalNumOfBooksInCart();    
+
+    //updating  the stylings of the add to cart button without reloading the whole page :) happy about this one
+    const btn = document.getElementById(`addToCart-${bookID}`);
+    if (btn) {
+        btn.className = "buttonStyleAdded";
+        btn.innerText = "Added";            
+    }
+    if (window.location.pathname.includes("cart.html")) {
+        location.reload();
+    }
+}
+
+
+/*********** On "read more" click, function scroles to description section in individual book page ************/
 function scollToDescription(){
     document.getElementById('individualBookDescription').scrollIntoView({
         behavior: "smooth"
     });
 }
 
-/****** When handburger menu is clicked, CSS is changed *******/
+
+
+
+
+/****** When handburger menu is clicked, Nav Bar CSS is changed *******/
 
 function myFunction() {
   let x = document.getElementById("myTopnav")
@@ -200,6 +227,10 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+
+
+
+
 
 /********* When user adds book to cart: user will be brought to Cart page with that specific books information ***********/
 
@@ -230,13 +261,19 @@ async function navBar(){
     highlightActiveNav();
 }
 
+
+
+
+
+
 /********** Changing style class on current page link on navBar **********/
 
 function highlightActiveNav() {
     const links = document.querySelectorAll('#myTopnav a'); // all <a> in navbar
     const currentPath = window.location.pathname;
 
-    console.log("C Page:", currentPath, " | Links ", links);
+    //Test to view current page path and if CSS is active
+    console.log("C Page:", currentPath, " | CSS active? ", links);
 
     links.forEach(link => {
         // Remove any previous 'active'
@@ -249,6 +286,8 @@ function highlightActiveNav() {
         }
     });
 }
+
+
 
 /********** loading news information and printing it **********/
 

@@ -216,12 +216,12 @@ padding-right: .4rem;
     gap: 0.5rem; */
 }
 
-.bookRecommendationContainer{
-
+.bookRecommendationsContainer{
+  display: block;
+  
 }
 
 .bookCardsRecommendations{
- 
   display: flex;       
     flex-wrap:wrap;   
     justify-content: center;

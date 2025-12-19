@@ -31,7 +31,7 @@ function getBooksInCart(){
         <div class="cartCard">
             <div class="cardCardRows">
                 <p>${book.name}</p>
-                <i onClick="removeBookFromCart(${book.id})" class="fa-trash-o"></i>
+                <i onClick="removeBookFromCart(${book.id})" class="fa fa-trash-o myTrashStyling"></i>
             </div>
         <div class="cardCardRows">
         <div>
@@ -50,13 +50,18 @@ function getBooksInCart(){
 
 
 function removeBookFromCart(bookID){
-    let booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
+     let booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
 
-    console.log("Current books in Cart before deleting:", booksInCart);
-    
-    booksInCart = booksInCart.filter(book => book.id != bookID) ;
+    booksInCart = booksInCart.filter(book => book.id != bookID);
 
-    console.log("Current books in Cart After deleting:", booksInCart);
+    localStorage.setItem("booksInCart", JSON.stringify(booksInCart));
+    document.getElementById('myCart').innerHTML = "";
+    getBooksInCart();
+    loadBooks(3);
+
+  
+    totalNumOfBooksInCart();
+    calculateTotalPrice();
 }
 
 
@@ -113,19 +118,12 @@ function customerBuysBooks(){
         alert("You Curently Have No Items In Your Cart.");
         return;
     }
-
+    
     event.preventDefault();
     loadLoadingIcon();
-    window.setTimeout(test, 3000);
-    // test()
-
     
-
-
-    //loading set timer
-    //bring to new page or hide all cart information 
-    //Successful message 
-    // link to home page to buy more books localstorage is cleared
+    window.setTimeout(loadReceipt, 3000);
+    // localStorage.clear();
 }
 
 function loadLoadingIcon(){
@@ -137,9 +135,11 @@ function loadLoadingIcon(){
     </div>`
 }
 
-function test(){
+function loadReceipt(){
         let booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
         document.getElementById('shoppingCartCheckoutPlusActiveCart').style.display = "none";
+        document.getElementById('bookCardsRecommendations').style.display = "none";
+
         console.log("total price from buy button");
 
         let boughtItems = document.getElementById('userSuccessfullyBoughtItems').innerHTML;

@@ -3,21 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Page</title>
+    <title>Nook book page</title>
+
+    <!-- Page and Component Structure Styling -->
     <link rel="stylesheet" href="../styles/styles.css">
+    <!-- Handburger Icon  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
-<body onload="navBar();totalNumOfBooksInCart(); loadMyFooter();">  
-   <div id="navBar" class="removeSearchBar">
-    </div>  
-    <span class="numOfItemsInCart" id="totalNumOfBooksInCart"></span>
-    <div>
-        <p id="bookDisplay"></p>
-    </div>
 
-    <div id="myFooter"></div>
+<!-- Page-specific JS initialisation -->
+<body onload="navBar(); loadBooks(); totalNumOfBooksInCart(); loadMyFooter();">  
 
+ <!-- NavBar Injected Via JS With Cart Item Counter-->
+    <head>   
+        <div id="navBar" class="removeSearchBar"></div>  
+        <span class="numOfItemsInCart" id="totalNumOfBooksInCart"></span>
+    </head>
+
+    <!-- Rendering individual book information from JS -->
+    <main>
+        <div>
+            <p id="bookDisplay"></p>
+        </div>
+    </main>
+
+    <!-- NavBar Injected Via JS -->
+    <footer class="site-footer">
+        <div id="myFooter"></div>
+    </footer>
+
+
+    
+    <!-- JavaScriptfunctionality:
+     - Displays individual book data
+     - Handles add-to-cart
+     - Injects navbar and footer -->
     <script src ="../js/app.js"></script>
+
+    <!-- JavaScript for num of items in cart counter in navbar -->
     <script src ="../js/cart.js"></script>
+
 </body>
 </html>
