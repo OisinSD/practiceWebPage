@@ -3,6 +3,14 @@ body {
     padding: 0;
     background-image: linear-gradient(#FAF3E5,#FAF3E5);
 }
+header,
+main,
+section,
+footer {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
 /************* Nav Bar ****************/
 
 .topnav {
@@ -38,7 +46,7 @@ body {
 
 .numOfItemsInCart{
   position: absolute;
-  right: 7px;
+  right: 22px;
   top:10px
 }
 .removeSearchBar input{
@@ -334,7 +342,7 @@ footer{
 footer{
   background-color: #f1f1f1;
   text-align: center;
-  padding: 5rem;
+  /* padding: 5rem; */
 }
 
 .site-footer {

@@ -3,35 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Page</title>
+    <title>Nook News</title>
+
+    <!-- Page and Component Structure Styling -->
     <link rel="stylesheet" href="../styles/styles.css">
+    <!-- News Card, news letter form & success message styling -->
     <link rel="stylesheet" href="../styles/newsStyles.css"> 
+    <!-- Pop up modal styling -->
     <link rel="stylesheet" href="../styles/modalStyles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
+
+<!-- Page-specific JS initialisation -->
 <body onload="navBar(); loadNewsPage(); printNewsLetterFrom(); totalNumOfBooksInCart(); loadMyFooter();">  
 
-    <div id="navBar" class="removeSearchBar"></div> 
-    <span class="numOfItemsInCart" id="totalNumOfBooksInCart"></span>
+    <header>
+        <!-- NavBar Injected Via JS -->
+        <div id="navBar" class="removeSearchBar"></div> 
+        <!-- Cart Item Counter-->
+        <span class="numOfItemsInCart" id="totalNumOfBooksInCart"></span>
+    </header>
 
-    <h1 class="title" >Latest News</h1>
+    <main>
 
-    <div class="newsPage" >
-        <p id="newsCard"></p>
-        <p id="bigNews"></p>
-    </div>    
+        <h1 class="title" >Latest News</h1>
+        
+        <!-- News rendered from JSON via JavaScript -->
+        <div class="newsPage" >
+            <p id="newsCard"></p>
+            <p id="bigNews"></p>
+        </div>    
+        
+        <!-- <div id="myModal" class="modal">
+            <div id="displayModal"></div>
+        </div> -->
+        
+        <div class="spliter"><hr></div>
+        
+        <!-- News Letter Form Injected Via JS -->
+        <div id="printForm"></div>
 
-    <!-- <div id="myModal" class="modal">
-        <div id="displayModal"></div>
-    </div> -->
+    </main>
 
-    <div class="spliter"><hr></div>
+    <!-- Site Footer Injected Via JS -->
+    <footer>
+        <div id="myFooter"></div>
+    </footer>
 
-    <div id="printForm"></div>
-    <div id="myFooter"></div>
+    <!-- JavaScript Loads navbar and footer -->
+    <script src ="../js/app.js"></script>
+    <!-- JavaScript for num of items in cart counter in navbar -->
+    <script src ="../js/cart.js"></script>
+    <!-- JavaScript for loading news letter form & news cards -->
+    <script src ="../js/newsPage.js"></script>
 
-<script src ="../app.js"></script>
-<script src ="../cart.js"></script>
-<script src ="../newsPage.js"></script>
 </body>
 </html>

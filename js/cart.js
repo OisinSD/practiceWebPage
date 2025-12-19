@@ -51,8 +51,12 @@ function getBooksInCart(){
 
 function removeBookFromCart(bookID){
     let booksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];
+
     console.log("Current books in Cart before deleting:", booksInCart);
+    
     booksInCart = booksInCart.filter(book => book.id != bookID) ;
+
+    console.log("Current books in Cart After deleting:", booksInCart);
 }
 
 
@@ -183,6 +187,6 @@ function test(){
 }
 
 function continueShoppingAfterPurchase(){
-    window.location.href = "../pages/index.html";
+    window.location.href = "../index.html";
     localStorage.clear();
 }

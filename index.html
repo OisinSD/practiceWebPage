@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nook Home</title>
+
+    <!-- Page and Component Structure Styling -->
+    <link rel="stylesheet" href="../styles/styles.css"> 
+    <!-- Hero Image Styling -->
+    <link rel="stylesheet" href="../styles/aboutUs.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<!-- Page-specific JS initialisation -->
+<body onload="navBar(); totalNumOfBooksInCart(); loadBooks();  loadMyFooter();">  
+    
+    <header>
+        <!-- NavBar Injected Via JS -->
+        <div id="navBar"></div>
+
+        <!-- Cart Item Counter-->
+        <span class="numOfItemsInCart" id="totalNumOfBooksInCart"></span>
+    </header>
+
+    <main>
+
+        <!-- Hero Image On Homepage -->
+        <section>
+            <div class="hero-image">
+                <div class="hero-text">
+                    <h1 class="aboutUsTitle">Nook</h1>
+                    <h1 class="aboutUsSubtitle"></h1>
+                </div>
+            </div> 
+        </section>
+
+        <section>
+            <h1 class="title">Our Popular Books</h1>
+
+            <!-- Books rendered from JSON via JavaScript -->
+            <div class="printingDisplay">
+                <p id="bookName" class="bookName"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Site Footer Injected Via JS -->
+    <footer>
+        <div id="myFooter"></div>
+    </footer>
+    
+    <!-- JavaScript for homepage functionality:
+     - Fetches and displays book data from JSON
+     - Handles search, add-to-cart, and book selection
+     - Injects navbar and footer -->
+    <script src ="js/app.js"></script>
+
+    <!-- JavaScript for num of items in cart counter in navbar -->
+    <script src ="js/cart.js"></script>
+
+</body>
+</html>
